@@ -2,38 +2,213 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>总统套房</title>
-    <link>http://example.org/</link>
+    <link>https://juncham.github.io/</link>
     <description>Recent content on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-Hans</language>
-    <lastBuildDate>Sat, 25 Jan 2020 21:00:42 +0800</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 04 Feb 2020 16:42:31 +0800</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://juncham.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>About</title>
+      <link>https://juncham.github.io/about/</link>
+      <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/about/</guid>
+      
+        <description>&lt;p&gt;Hugo is a static site engine written in Go.&lt;/p&gt;
+&lt;p&gt;It makes use of a variety of open source projects including:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cobra&#34;&gt;Cobra&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/viper&#34;&gt;Viper&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/jWalterWeatherman&#34;&gt;J Walter Weatherman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>试验品t</title>
+      <link>https://juncham.github.io/post/%E8%AF%95%E9%AA%8C%E5%93%81t/</link>
+      <pubDate>Tue, 04 Feb 2020 16:42:31 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/%E8%AF%95%E9%AA%8C%E5%93%81t/</guid>
+      
+        <description>&lt;p&gt;尝试&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>测试</title>
+      <link>https://juncham.github.io/posts/%E6%B5%8B%E8%AF%95/</link>
+      <pubDate>Tue, 04 Feb 2020 16:27:29 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/posts/%E6%B5%8B%E8%AF%95/</guid>
+      
+        <description>&lt;p&gt;什么情况？&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>HTML常用标签</title>
+      <link>https://juncham.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</link>
+      <pubDate>Tue, 04 Feb 2020 11:14:28 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/</guid>
+      
+        <description>&lt;h1 id=&#34;html常用标签&#34;&gt;HTML常用标签&lt;/h1&gt;
+&lt;h2 id=&#34;a标签&#34;&gt;a标签&lt;/h2&gt;
+&lt;p&gt;很常用，通常是跳转到内部页面或者外部页面，或者手机或邮箱。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; href是hyer与reference的结合，超链接，可以在当前网页打开相应的链接。可以打开http、htttps、或者直接以//开头的网页，后者是默认最高级会逐级跳转。&lt;/p&gt;
+&lt;p&gt;添加tel+手机号码，如果是在打开可以直接呼唤号码。&lt;/p&gt;
+&lt;p&gt;添加mailto+邮箱，可以直接跳转到发邮件。&lt;/p&gt;
+&lt;p&gt;另外添加目录也可以跳转，html里面/默认是当前的文件是根目录。&lt;/p&gt;
+&lt;p&gt;javascript伪协议写法，&lt;!-- raw HTML omitted --&gt;按钮&lt;!-- raw HTML omitted --&gt;。代码是对应想要的代码，如果想要点击之后毫无反应就什么都不写。&lt;/p&gt;
+&lt;p&gt;也可以跳转相应的id，id=xxx&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;决定链接在何处打开，其中&lt;/p&gt;
+&lt;p&gt;1 _blank 是在新的空白页面打开&lt;/p&gt;
+&lt;p&gt;2 _top 在上层页面打开&lt;/p&gt;
+&lt;p&gt;3 _parent 在当前连接所在的上层打开&lt;/p&gt;
+&lt;p&gt;4 _self 在当前链接打开&lt;/p&gt;
+&lt;p&gt;如果是target=xxx，则会创建新的窗口自动命名xxx并打开。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; 下载对应的网页，有可能不支持&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; 防止某些bug，以后会说到&lt;/p&gt;
+&lt;h2 id=&#34;img标签&#34;&gt;img标签&lt;/h2&gt;
+&lt;p&gt;作用是发出get请求，展示一张图片。&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&amp;gt;等号后面接图片的地址，可以是网络上的地址也可以是目录里面的。
+alt：替换的，或者可选择的。通常是图片加载失败就替换展示的图片（eg：404）。&lt;/p&gt;
+&lt;p&gt;width、height：宽度和高度，只写一个另一个就自动对应变化。如果不对应就可能图片变形。如果加载超过页面宽高就填写100%（响应式）。&lt;/p&gt;
+&lt;p&gt;onload、onerror：用于监听图片是否加载成功。写在img命令的下面，用script包含着。&lt;/p&gt;
+&lt;p&gt;对应名称.onload=funcion&lt;/p&gt;
+&lt;p&gt;console.log(&amp;lsquo;图片加载成功&amp;rsquo;)&lt;/p&gt;
+&lt;p&gt;xxx.src=yyy路径  进行补救&lt;/p&gt;
+&lt;h2 id=&#34;table标签&#34;&gt;table标签&lt;/h2&gt;
+&lt;p&gt;主要用于制作表格。里面通常只包含thead、tbody、tfoot三个标签。但是彼此之间调换顺序并无影响。这三者里面包含tr（row，行）里面包含th（thead缩写、作表头），td（data，内容）。&lt;/p&gt;
+&lt;p&gt;如果需要首行和首列都是表头，可以在tbody里面第一个使用th，后面内容td，如此类推。&lt;/p&gt;
+&lt;h3 id=&#34;table的相关样式&#34;&gt;table的相关样式&lt;/h3&gt;
+&lt;p&gt;table-layout：auto就自动按内容决定行列距，fixed就各行列平均，由第一列或第一行的宽度决定。&lt;/p&gt;
+&lt;p&gt;border：10px，solid，red。就是表格间相距10像素，实线，红色。&lt;/p&gt;
+&lt;p&gt;table-spacing：表格之间的距离。&lt;/p&gt;
+&lt;p&gt;table-collapse：表格距离的合并，spacing=0时就是常见的Excel那样。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>HTML入门笔记1.1</title>
+      <link>https://juncham.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01.1/</link>
+      <pubDate>Sun, 02 Feb 2020 21:18:51 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01.1/</guid>
+      
+        <description>&lt;h1 id=&#34;html-入门笔记-1&#34;&gt;HTML 入门笔记 1&lt;/h1&gt;
+&lt;p&gt;终于开始做网页啦，虽然听课的时候比较好懂，但是一到要把每个标签之类的写出来感觉还是难的。主要分为 HTML 的起源、起手、章节标签、全局属性、内容标签。&lt;/p&gt;
+&lt;h2 id=&#34;html-的起源&#34;&gt;HTML 的起源&lt;/h2&gt;
+&lt;p&gt;HTML 源自于李博士的天才捣弄，他依据网址搞出了 URL，根据网页搞出了 HTML，为了让两者更加完善，搞出了 HTTP。&lt;/p&gt;
+&lt;h2 id=&#34;html-的起手&#34;&gt;HTML 的起手&lt;/h2&gt;
+&lt;p&gt;感叹号开局，emmet abbreviation 那个选项。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html lang=&amp;#34;zh-CN&amp;#34;&amp;gt;
+  &amp;lt;head&amp;gt;
+    &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt;
+    &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;
+    &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34; /&amp;gt;
+    &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
+  &amp;lt;/head&amp;gt;
+  &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一行表示文件类型是 html。
+lang 代表语言，这里 zh-CN 表示简体中文。
+UTF-8 兼容人类所有的语言，后面几行主要是防止网页的缩放，感觉以后会在博客写到的。&lt;/p&gt;
+&lt;h2 id=&#34;章节标签&#34;&gt;章节标签&lt;/h2&gt;
+&lt;p&gt;h1~h6 表示各级大小的标题，同数字之间可以并列使用。
+section 表示新的章节，里面可以使用下一级 hn。
+p 表示一段话。
+article 表示文章
+main 主要内容
+aside 旁支内容
+div 划分段落&lt;/p&gt;
+&lt;h2 id=&#34;全局属性&#34;&gt;全局属性&lt;/h2&gt;
+&lt;p&gt;全局属性是指所有的标签都可以有的属性。
+主要包括：class、contenteditable、hidden、id、style、tabindex、title.
+其中没事就别用 id,虽然它表示是唯一的，但是你不能确保它是唯一的，而却出现 bug 并不会报错。&lt;/p&gt;
+&lt;h2 id=&#34;内容标签&#34;&gt;内容标签&lt;/h2&gt;
+&lt;p&gt;ol+il 有顺序的列表
+ul+il 没有顺序的列表
+dl+dd+dt dl 描述列表，dt 描述对象，dd 描述内容。
+pre 所包含的内容如实呈现（多个空格，多个回车等）
+a 用于添加网页链接
+em 强调，重于语气，通常斜体表示，可以修改表现形式。
+strong 强调，重于内容，通常加粗表示，同上。
+code 用于表示计算机源代码等。&lt;/p&gt;
+&lt;p&gt;今天的内容就到这里啦。&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>试验品2</title>
+      <link>https://juncham.github.io/posts/%E8%AF%95%E9%AA%8C%E5%93%812/</link>
+      <pubDate>Sat, 25 Jan 2020 22:40:06 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/posts/%E8%AF%95%E9%AA%8C%E5%93%812/</guid>
+      
+        <description>&lt;p&gt;实验能不能生成&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>试验品</title>
+      <link>https://juncham.github.io/post/%E8%AF%95%E9%AA%8C%E5%93%81/</link>
+      <pubDate>Sat, 25 Jan 2020 22:35:40 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/%E8%AF%95%E9%AA%8C%E5%93%81/</guid>
+      
+        <description>&lt;p&gt;看看在post上面能不能上传&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>如何利用Hugo搭建博客</title>
-      <link>http://example.org/post/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <link>https://juncham.github.io/posts/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
       <pubDate>Sat, 25 Jan 2020 21:00:42 +0800</pubDate>
       
-      <guid>http://example.org/post/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
-      <description>如何利用Hugo搭建博客 实质上的第一篇博客 可以说这才是个人第一篇自己制作的博客啦，感觉就好像一个网络世界与代码世界里面创造一叶扁舟的开始。
-其实内容主要是复述课程上学习的的内容啦。
-首先是去到 Hugo release 页面下载安装包
-解压后将Hugo.exe放到D:\Software\Hugo ，再将上述的目录路径添加到PATH
-重启vscode，运行hugo version
-最后按照Hugo官网的指南进行配置即可使用啦。
-hugo server -D 以上命令可以预览草稿，或者在VScode上利用Markdown的预览功能也可以进行预览。
-大概就是这些啦。</description>
+      <guid>https://juncham.github.io/posts/%E5%A6%82%E4%BD%95%E5%88%A9%E7%94%A8hugo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      
+        <description>&lt;h1 id=&#34;如何利用hugo搭建博客&#34;&gt;如何利用Hugo搭建博客&lt;/h1&gt;
+&lt;h2 id=&#34;实质上的第一篇博客&#34;&gt;实质上的第一篇博客&lt;/h2&gt;
+&lt;p&gt;可以说这才是个人第一篇自己制作的博客啦，感觉就好像一个网络世界与代码世界里面创造一叶扁舟的开始。&lt;/p&gt;
+&lt;p&gt;其实内容主要是复述课程上学习的的内容啦。&lt;/p&gt;
+&lt;p&gt;首先是去到 &lt;a href=&#34;https://github.com/gohugoio/hugo/releases&#34;&gt;Hugo release&lt;/a&gt; 页面下载安装包&lt;/p&gt;
+&lt;p&gt;解压后将Hugo.exe放到D:\Software\Hugo ，再将上述的目录路径添加到PATH&lt;/p&gt;
+&lt;p&gt;重启vscode，运行hugo version&lt;/p&gt;
+&lt;p&gt;最后按照Hugo官网的指南进行配置即可使用啦。&lt;/p&gt;
+&lt;h2 id=&#34;hugo-server--d&#34;&gt;hugo server -D&lt;/h2&gt;
+&lt;p&gt;以上命令可以预览草稿，或者在VScode上利用Markdown的预览功能也可以进行预览。&lt;/p&gt;
+&lt;p&gt;大概就是这些啦。&lt;/p&gt;
+</description>
+      
     </item>
     
     <item>
       <title>开博大吉</title>
-      <link>http://example.org/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</link>
+      <link>https://juncham.github.io/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</link>
       <pubDate>Wed, 22 Jan 2020 23:30:00 +0800</pubDate>
       
-      <guid>http://example.org/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</guid>
-      <description>大家好 我的博客开通了，希望我能写出好文章给各位！</description>
+      <guid>https://juncham.github.io/posts/%E5%BC%80%E5%8D%9A%E5%A4%A7%E5%90%89/</guid>
+      
+        <description>&lt;h1 id=&#34;大家好&#34;&gt;大家好&lt;/h1&gt;
+&lt;p&gt;我的博客开通了，希望我能写出好文章给各位！&lt;/p&gt;
+</description>
+      
     </item>
     
   </channel>
