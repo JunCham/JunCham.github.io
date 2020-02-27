@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>HTML常用标签 - 总统套房</title>
+  <title>CSS知识总结 - 总统套房</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,7 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xianmin" />
-  <meta name="description" content="HTML常用标签 a标签 很常用，通常是跳转到内部页面或者外部页面，或者手机或邮箱。 href是hyer与reference的结合，超链接，可以在" />
+  <meta name="description" content="CSS知识总结 最近学习了CSS动画的制作。 今天的博客主要包括两个部分： 浏览器渲染原理 CSS 动画的两种做法（transition 和 animation) 浏览器渲染原理" />
 
   <meta name="keywords" content="Hugo, theme, jane" />
 
@@ -35,7 +35,7 @@
 <meta name="generator" content="Hugo 0.62.2" />
 
 
-<link rel="canonical" href="https://juncham.github.io/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" />
+<link rel="canonical" href="https://juncham.github.io/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
 
 
 
@@ -59,23 +59,23 @@
 
 
 
-<meta property="og:title" content="HTML常用标签" />
-<meta property="og:description" content="HTML常用标签 a标签 很常用，通常是跳转到内部页面或者外部页面，或者手机或邮箱。 href是hyer与reference的结合，超链接，可以在" />
+<meta property="og:title" content="CSS知识总结" />
+<meta property="og:description" content="CSS知识总结 最近学习了CSS动画的制作。 今天的博客主要包括两个部分： 浏览器渲染原理 CSS 动画的两种做法（transition 和 animation) 浏览器渲染原理" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://juncham.github.io/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" />
-<meta property="article:published_time" content="2020-02-04T22:29:44+08:00" />
-<meta property="article:modified_time" content="2020-02-04T22:29:44+08:00" />
-<meta itemprop="name" content="HTML常用标签">
-<meta itemprop="description" content="HTML常用标签 a标签 很常用，通常是跳转到内部页面或者外部页面，或者手机或邮箱。 href是hyer与reference的结合，超链接，可以在">
-<meta itemprop="datePublished" content="2020-02-04T22:29:44&#43;08:00" />
-<meta itemprop="dateModified" content="2020-02-04T22:29:44&#43;08:00" />
-<meta itemprop="wordCount" content="1005">
+<meta property="og:url" content="https://juncham.github.io/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+<meta property="article:published_time" content="2020-02-26T21:20:32+08:00" />
+<meta property="article:modified_time" content="2020-02-26T21:20:32+08:00" />
+<meta itemprop="name" content="CSS知识总结">
+<meta itemprop="description" content="CSS知识总结 最近学习了CSS动画的制作。 今天的博客主要包括两个部分： 浏览器渲染原理 CSS 动画的两种做法（transition 和 animation) 浏览器渲染原理">
+<meta itemprop="datePublished" content="2020-02-26T21:20:32&#43;08:00" />
+<meta itemprop="dateModified" content="2020-02-26T21:20:32&#43;08:00" />
+<meta itemprop="wordCount" content="1035">
 
 
 
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HTML常用标签"/>
-<meta name="twitter:description" content="HTML常用标签 a标签 很常用，通常是跳转到内部页面或者外部页面，或者手机或邮箱。 href是hyer与reference的结合，超链接，可以在"/>
+<meta name="twitter:title" content="CSS知识总结"/>
+<meta name="twitter:description" content="CSS知识总结 最近学习了CSS动画的制作。 今天的博客主要包括两个部分： 浏览器渲染原理 CSS 动画的两种做法（transition 和 animation) 浏览器渲染原理"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -337,11 +337,11 @@
           <article class="post bg-white">
     
     <header class="post-header">
-      <h1 class="post-title">HTML常用标签</h1>
+      <h1 class="post-title">CSS知识总结</h1>
       
       <div class="post-meta">
-        <time datetime="2020-02-04" class="post-time">
-          2020-02-04
+        <time datetime="2020-02-26" class="post-time">
+          2020-02-26
         </time>
         
         
@@ -361,13 +361,13 @@
   <div class="post-toc-content">
     <nav id="TableOfContents">
   <ul>
-    <li><a href="#a标签">a标签</a></li>
-    <li><a href="#img标签">img标签</a></li>
-    <li><a href="#table标签">table标签</a>
+    <li><a href="#浏览器渲染原理">浏览器渲染原理</a></li>
+    <li><a href="#css动画制作">CSS动画制作</a>
       <ul>
-        <li><a href="#table的相关样式">table的相关样式</a></li>
+        <li><a href="#transition制作动画">transition制作动画</a></li>
       </ul>
     </li>
+    <li><a href="#animation制作动画">animation制作动画</a></li>
   </ul>
 </nav>
   </div>
@@ -375,40 +375,51 @@
 
     
     <div class="post-content">
-      <h1 id="html常用标签">HTML常用标签</h1>
-<h2 id="a标签">a标签</h2>
-<p>很常用，通常是跳转到内部页面或者外部页面，或者手机或邮箱。</p>
-<p><!-- raw HTML omitted --> href是hyer与reference的结合，超链接，可以在当前网页打开相应的链接。可以打开http、htttps、或者直接以//开头的网页，后者是默认最高级会逐级跳转。</p>
-<p>添加tel+手机号码，如果是在打开可以直接呼唤号码。</p>
-<p>添加mailto+邮箱，可以直接跳转到发邮件。</p>
-<p>另外添加目录也可以跳转，html里面/默认是当前的文件是根目录。</p>
-<p>javascript伪协议写法，<!-- raw HTML omitted -->按钮<!-- raw HTML omitted -->。代码是对应想要的代码，如果想要点击之后毫无反应就什么都不写。</p>
-<p>也可以跳转相应的id，id=xxx</p>
-<p><!-- raw HTML omitted -->决定链接在何处打开，其中</p>
-<p>1 _blank 是在新的空白页面打开</p>
-<p>2 _top 在上层页面打开</p>
-<p>3 _parent 在当前连接所在的上层打开</p>
-<p>4 _self 在当前链接打开</p>
-<p>如果是target=xxx，则会创建新的窗口自动命名xxx并打开。</p>
-<p><!-- raw HTML omitted --> 下载对应的网页，有可能不支持</p>
-<p><!-- raw HTML omitted --> 防止某些bug，以后会说到</p>
-<h2 id="img标签">img标签</h2>
-<p>作用是发出get请求，展示一张图片。</p>
-<p>&lt;img src=&gt;等号后面接图片的地址，可以是网络上的地址也可以是目录里面的。
-alt：替换的，或者可选择的。通常是图片加载失败就替换展示的图片（eg：404）。</p>
-<p>width、height：宽度和高度，只写一个另一个就自动对应变化。如果不对应就可能图片变形。如果加载超过页面宽高就填写100%（响应式）。</p>
-<p>onload、onerror：用于监听图片是否加载成功。写在img命令的下面，用script包含着。</p>
-<p>对应名称.onload=funcion</p>
-<p>console.log(&lsquo;图片加载成功&rsquo;)</p>
-<p>xxx.src=yyy路径  进行补救</p>
-<h2 id="table标签">table标签</h2>
-<p>主要用于制作表格。里面通常只包含thead、tbody、tfoot三个标签。但是彼此之间调换顺序并无影响。这三者里面包含tr（row，行）里面包含th（thead缩写、作表头），td（data，内容）。</p>
-<p>如果需要首行和首列都是表头，可以在tbody里面第一个使用th，后面内容td，如此类推。</p>
-<h3 id="table的相关样式">table的相关样式</h3>
-<p>table-layout：auto就自动按内容决定行列距，fixed就各行列平均，由第一列或第一行的宽度决定。</p>
-<p>border：10px，solid，red。就是表格间相距10像素，实线，红色。</p>
-<p>table-spacing：表格之间的距离。</p>
-<p>table-collapse：表格距离的合并，spacing=0时就是常见的Excel那样。</p>
+      <h1 id="css知识总结">CSS知识总结</h1>
+<p>最近学习了CSS动画的制作。</p>
+<p>今天的博客主要包括两个部分：</p>
+<ol>
+<li>
+<p>浏览器渲染原理</p>
+</li>
+<li>
+<p>CSS 动画的两种做法（transition 和 animation)</p>
+</li>
+</ol>
+<h2 id="浏览器渲染原理">浏览器渲染原理</h2>
+<ol>
+<li>浏览器将获取的HTML文档解析成DOM树。</li>
+<li>处理CSS标记，构成层叠样式表模型CSSOM(CSS Object Model)。</li>
+<li>将DOM和CSSOM合并为渲染树(rendering tree)将会被创建，代表一系列将被渲染的对象。</li>
+<li>渲染树的每个元素包含的内容都是计算过的，它被称之为布局layout。浏览器使用一种流式处理的方法，只需要一次绘制操作就可以布局所有的元素。</li>
+<li>将渲染树的各个节点绘制到屏幕上，这一步被称为绘制painting。</li>
+</ol>
+<p>作者：oWSQo</p>
+<p>链接：https://www.jianshu.com/p/e6252dc9be32</p>
+<ol start="6">
+<li>最后还有一个步骤：Compose,根据层叠关系展示画面。</li>
+</ol>
+<p>渲染的流程与一些环节的改动有关，例如删除了某个div造成排版的重新改变，这个时候以上流程的每一步都需要进行，有时候只是改变了背景颜色，其他布局不变，那么久直接跳过了layout，如果只是改变了某些样式，例如transform，就可以跳过layout和paint，直接合成。</p>
+<p>{&lt; figure src=&quot;image/渲染树.png&rdquo; title=&quot;渲染树&rdquo; &gt;}</p>
+<p>渲染的更新需要在全屏查看效果，在iframe里面看有问题。</p>
+<h2 id="css动画制作">CSS动画制作</h2>
+<p>CSS的transform命令可以对元素进行旋转，缩放，倾斜或平移操作。</p>
+<ol>
+<li>位移translate，通常X/Y/Z代表坐标系里各方向上的平移。也可以用三个数字分别进行表示，不表示的可以不写。</li>
+<li>缩放scale，一位数表示整体缩放，两位数分别表示X/Y上各自的缩放倍数。</li>
+<li>旋转rotate，以度数表示。</li>
+<li>倾斜skew，这个涉及立体上的角度，给定定位点可以更加具体的展示元素的倾斜情况。</li>
+</ol>
+<h3 id="transition制作动画">transition制作动画</h3>
+<p>transition主要是为给定的两个点补充中间帧。</p>
+<p>语法：transition：属性名 时长 过度方式 延时时长</p>
+<p>通常后面延时比较少用。也不是所有属性都能过度，需要透明度（opacity）、背景等等额改变最好作明确的编码表达。</p>
+<h2 id="animation制作动画">animation制作动画</h2>
+<p>语法1：@keyframe 元素id{n% {相应命令}}
+语法2：@keyframe form{相应命令} to{相应命令}</p>
+<p>附带两个自制动画链接：</p>
+<p>transition：http://js.jirengu.com/javil/1/watch?html,css,output</p>
+<p>animation: <a href="http://js.jirengu.com/feyev/1/watch?html,css,output">http://js.jirengu.com/feyev/1/watch?html,css,output</a></p>
 
     </div>
 
@@ -422,7 +433,7 @@ alt：替换的，或者可选择的。通常是图片加载失败就替换展�
   <p class="copyright-item">
     <span class="item-title">上次更新</span>
     <span class="item-content">
-      2020-02-04
+      2020-02-26
       
     </span>
   </p>
@@ -443,22 +454,9 @@ alt：替换的，或者可选择的。通常是图片加载失败就替换展�
       
       <nav class="post-nav">
         
-          <a class="prev" href="/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE1/">
-            
-            <i class="iconfont">
-              <svg  class="icon" viewBox="0 0 1024 1024" version="1.1"
-  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-  width="18" height="18">
-  <path d="M691.908486 949.511495l75.369571-89.491197c10.963703-12.998035 10.285251-32.864502-1.499144-44.378743L479.499795 515.267417 757.434875 204.940602c11.338233-12.190647 11.035334-32.285311-0.638543-44.850487l-80.46666-86.564541c-11.680017-12.583596-30.356378-12.893658-41.662889-0.716314L257.233596 494.235404c-11.332093 12.183484-11.041474 32.266891 0.657986 44.844348l80.46666 86.564541c1.772366 1.910513 3.706415 3.533476 5.750981 4.877077l306.620399 321.703933C662.505829 963.726242 680.945807 962.528973 691.908486 949.511495z"></path>
-</svg>
-
-            </i>
-            <span class="prev-text nav-default">HTML常用标签1</span>
-            <span class="prev-text nav-mobile">上一篇</span>
-          </a>
         
-          <a class="next" href="/post/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B01/">
-            <span class="next-text nav-default">HTML入门笔记1</span>
+          <a class="next" href="/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE1/">
+            <span class="next-text nav-default">HTML常用标签1</span>
             <span class="prev-text nav-mobile">下一篇</span>
             
             <i class="iconfont">

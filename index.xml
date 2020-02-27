@@ -6,7 +6,7 @@
     <description>Recent content on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Tue, 04 Feb 2020 22:29:44 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 26 Feb 2020 21:20:32 +0800</lastBuildDate>
     
         <atom:link href="https://juncham.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,107 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>CSS知识总结</title>
+      <link>https://juncham.github.io/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Wed, 26 Feb 2020 21:20:32 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/</guid>
+      
+        <description>&lt;h1 id=&#34;css知识总结&#34;&gt;CSS知识总结&lt;/h1&gt;
+&lt;p&gt;最近学习了CSS动画的制作。&lt;/p&gt;
+&lt;p&gt;今天的博客主要包括两个部分：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;浏览器渲染原理&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;CSS 动画的两种做法（transition 和 animation)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;浏览器渲染原理&#34;&gt;浏览器渲染原理&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;浏览器将获取的HTML文档解析成DOM树。&lt;/li&gt;
+&lt;li&gt;处理CSS标记，构成层叠样式表模型CSSOM(CSS Object Model)。&lt;/li&gt;
+&lt;li&gt;将DOM和CSSOM合并为渲染树(rendering tree)将会被创建，代表一系列将被渲染的对象。&lt;/li&gt;
+&lt;li&gt;渲染树的每个元素包含的内容都是计算过的，它被称之为布局layout。浏览器使用一种流式处理的方法，只需要一次绘制操作就可以布局所有的元素。&lt;/li&gt;
+&lt;li&gt;将渲染树的各个节点绘制到屏幕上，这一步被称为绘制painting。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;作者：oWSQo&lt;/p&gt;
+&lt;p&gt;链接：https://www.jianshu.com/p/e6252dc9be32&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;最后还有一个步骤：Compose,根据层叠关系展示画面。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;渲染的流程与一些环节的改动有关，例如删除了某个div造成排版的重新改变，这个时候以上流程的每一步都需要进行，有时候只是改变了背景颜色，其他布局不变，那么久直接跳过了layout，如果只是改变了某些样式，例如transform，就可以跳过layout和paint，直接合成。&lt;/p&gt;
+&lt;p&gt;{&amp;lt; figure src=&amp;quot;image/渲染树.png&amp;rdquo; title=&amp;quot;渲染树&amp;rdquo; &amp;gt;}&lt;/p&gt;
+&lt;p&gt;渲染的更新需要在全屏查看效果，在iframe里面看有问题。&lt;/p&gt;
+&lt;h2 id=&#34;css动画制作&#34;&gt;CSS动画制作&lt;/h2&gt;
+&lt;p&gt;CSS的transform命令可以对元素进行旋转，缩放，倾斜或平移操作。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;位移translate，通常X/Y/Z代表坐标系里各方向上的平移。也可以用三个数字分别进行表示，不表示的可以不写。&lt;/li&gt;
+&lt;li&gt;缩放scale，一位数表示整体缩放，两位数分别表示X/Y上各自的缩放倍数。&lt;/li&gt;
+&lt;li&gt;旋转rotate，以度数表示。&lt;/li&gt;
+&lt;li&gt;倾斜skew，这个涉及立体上的角度，给定定位点可以更加具体的展示元素的倾斜情况。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;transition制作动画&#34;&gt;transition制作动画&lt;/h3&gt;
+&lt;p&gt;transition主要是为给定的两个点补充中间帧。&lt;/p&gt;
+&lt;p&gt;语法：transition：属性名 时长 过度方式 延时时长&lt;/p&gt;
+&lt;p&gt;通常后面延时比较少用。也不是所有属性都能过度，需要透明度（opacity）、背景等等额改变最好作明确的编码表达。&lt;/p&gt;
+&lt;h2 id=&#34;animation制作动画&#34;&gt;animation制作动画&lt;/h2&gt;
+&lt;p&gt;语法1：@keyframe 元素id{n% {相应命令}}
+语法2：@keyframe form{相应命令} to{相应命令}&lt;/p&gt;
+&lt;p&gt;附带两个自制动画链接：&lt;/p&gt;
+&lt;p&gt;transition：http://js.jirengu.com/javil/1/watch?html,css,output&lt;/p&gt;
+&lt;p&gt;animation: &lt;a href=&#34;http://js.jirengu.com/feyev/1/watch?html,css,output&#34;&gt;http://js.jirengu.com/feyev/1/watch?html,css,output&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>HTML常用标签1</title>
+      <link>https://juncham.github.io/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE1/</link>
+      <pubDate>Tue, 04 Feb 2020 22:41:42 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE1/</guid>
+      
+        <description>&lt;h1 id=&#34;html常用标签&#34;&gt;HTML常用标签&lt;/h1&gt;
+&lt;h2 id=&#34;a标签&#34;&gt;a标签&lt;/h2&gt;
+&lt;p&gt;很常用，通常是跳转到内部页面或者外部页面，或者手机或邮箱。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; href是hyer与reference的结合，超链接，可以在当前网页打开相应的链接。可以打开http、htttps、或者直接以//开头的网页，后者是默认最高级会逐级跳转。&lt;/p&gt;
+&lt;p&gt;添加tel+手机号码，如果是在打开可以直接呼唤号码。&lt;/p&gt;
+&lt;p&gt;添加mailto+邮箱，可以直接跳转到发邮件。&lt;/p&gt;
+&lt;p&gt;另外添加目录也可以跳转，html里面/默认是当前的文件是根目录。&lt;/p&gt;
+&lt;p&gt;javascript伪协议写法，&lt;!-- raw HTML omitted --&gt;按钮&lt;!-- raw HTML omitted --&gt;。代码是对应想要的代码，如果想要点击之后毫无反应就什么都不写。&lt;/p&gt;
+&lt;p&gt;也可以跳转相应的id，id=xxx&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt;决定链接在何处打开，其中&lt;/p&gt;
+&lt;p&gt;1 _blank 是在新的空白页面打开&lt;/p&gt;
+&lt;p&gt;2 _top 在上层页面打开&lt;/p&gt;
+&lt;p&gt;3 _parent 在当前连接所在的上层打开&lt;/p&gt;
+&lt;p&gt;4 _self 在当前链接打开&lt;/p&gt;
+&lt;p&gt;如果是target=xxx，则会创建新的窗口自动命名xxx并打开。&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; 下载对应的网页，有可能不支持&lt;/p&gt;
+&lt;p&gt;&lt;!-- raw HTML omitted --&gt; 防止某些bug，以后会说到&lt;/p&gt;
+&lt;h2 id=&#34;img标签&#34;&gt;img标签&lt;/h2&gt;
+&lt;p&gt;作用是发出get请求，展示一张图片。&lt;/p&gt;
+&lt;p&gt;&amp;lt;img src=&amp;gt;等号后面接图片的地址，可以是网络上的地址也可以是目录里面的。
+alt：替换的，或者可选择的。通常是图片加载失败就替换展示的图片（eg：404）。&lt;/p&gt;
+&lt;p&gt;width、height：宽度和高度，只写一个另一个就自动对应变化。如果不对应就可能图片变形。如果加载超过页面宽高就填写100%（响应式）。&lt;/p&gt;
+&lt;p&gt;onload、onerror：用于监听图片是否加载成功。写在img命令的下面，用script包含着。&lt;/p&gt;
+&lt;p&gt;对应名称.onload=funcion&lt;/p&gt;
+&lt;p&gt;console.log(&amp;lsquo;图片加载成功&amp;rsquo;)&lt;/p&gt;
+&lt;p&gt;xxx.src=yyy路径  进行补救&lt;/p&gt;
+&lt;h2 id=&#34;table标签&#34;&gt;table标签&lt;/h2&gt;
+&lt;p&gt;主要用于制作表格。里面通常只包含thead、tbody、tfoot三个标签。但是彼此之间调换顺序并无影响。这三者里面包含tr（row，行）里面包含th（thead缩写、作表头），td（data，内容）。&lt;/p&gt;
+&lt;p&gt;如果需要首行和首列都是表头，可以在tbody里面第一个使用th，后面内容td，如此类推。&lt;/p&gt;
+&lt;h3 id=&#34;table的相关样式&#34;&gt;table的相关样式&lt;/h3&gt;
+&lt;p&gt;table-layout：auto就自动按内容决定行列距，fixed就各行列平均，由第一列或第一行的宽度决定。&lt;/p&gt;
+&lt;p&gt;border：10px，solid，red。就是表格间相距10像素，实线，红色。&lt;/p&gt;
+&lt;p&gt;table-spacing：表格之间的距离。&lt;/p&gt;
+&lt;p&gt;table-collapse：表格距离的合并，spacing=0时就是常见的Excel那样。&lt;/p&gt;
 </description>
       
     </item>
