@@ -6,7 +6,7 @@
     <description>Recent content on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Wed, 26 Feb 2020 21:20:32 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 28 Feb 2020 10:49:32 +0800</lastBuildDate>
     
         <atom:link href="https://juncham.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,36 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>浅析URL</title>
+      <link>https://juncham.github.io/post/%E6%B5%85%E6%9E%90url/</link>
+      <pubDate>Fri, 28 Feb 2020 10:49:32 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/%E6%B5%85%E6%9E%90url/</guid>
+      
+        <description>&lt;h2 id=&#34;浅析url&#34;&gt;浅析URL&lt;/h2&gt;
+&lt;h2 id=&#34;url&#34;&gt;URL&lt;/h2&gt;
+&lt;p&gt;URL：统一资源定位符（Uniform Resource Locator），标准格式如下：&lt;/p&gt;
+&lt;p&gt;以https://zh.wikipedia.org:80/w/index.php?title=Special:随机页面为例, 其中：&lt;/p&gt;
+&lt;p&gt;1.https，是协议；&lt;/p&gt;
+&lt;p&gt;2.zh.wikipedia.org，是服务器；&lt;/p&gt;
+&lt;p&gt;3.80，是服务器上的网络端口号；&lt;/p&gt;
+&lt;p&gt;4./w/index.php，是路径；&lt;/p&gt;
+&lt;p&gt;5.?title=Special:随机页面，是询问。&lt;/p&gt;
+&lt;p&gt;大多数网页浏览器不要求用户输入网页中“https://”的部分，因为绝大多数网页内容是超文本传输协议文件。同样，“80”是超文本传输协议文件的常用端口号，因此一般也不必写明。一般来说用户只要键入统一资源定位符的一部分&lt;/p&gt;
+&lt;h2 id=&#34;dns&#34;&gt;DNS&lt;/h2&gt;
+&lt;p&gt;DNS：域名系统（Domain Name System），它作为一个分布式数据库将域名和IP地址相互联系起来。IP用来定位一个设备，端口用来定位一个设备等的服务的。两者缺一不可。&lt;/p&gt;
+&lt;p&gt;nsloookup主要是用于查询DNS的信息，常用方法见：
+&lt;a href=&#34;https://www.jianshu.com/p/21dde6f7ce07&#34;&gt;https://www.jianshu.com/p/21dde6f7ce07&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;執行 nslookup 時可以直接在後面跟著我們要查詢的資料, 那麼 nslookup 會直接把結果傳回來。&lt;/p&gt;
+&lt;p&gt;如果只打入 nslookup [enter], 則進入交談模式, 出現提示符號 &amp;gt;, 此時 nslookup 會等待 user input command.&lt;/p&gt;
+&lt;p&gt;详细参考：http://faculty.ndhu.edu.tw/~comput/computer_c/training/hbc0122/dns-1.htm&lt;/p&gt;
+&lt;h2 id=&#34;ip&#34;&gt;IP&lt;/h2&gt;
+&lt;p&gt;ping加一个域名，可以得到该服务器的IP，IP主要是定位一个设备。域名就是IP，一个域名可以对应不同IP，负载均衡，防止过载。一个IP可以对应等多个不同的域名，共享主机，穷开发者会这样。域名通常有三种，com是顶级域名，qq.com是二级域名（俗称一级域名），www.qq.com（俗称二级），跟前者是父子关系。&lt;/p&gt;
 </description>
       
     </item>
@@ -62,8 +92,8 @@
 &lt;ol start=&#34;6&#34;&gt;
 &lt;li&gt;最后还有一个步骤：Compose,根据层叠关系展示画面。&lt;/li&gt;
 &lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;https://juncham.github.io/images/%E6%B8%B2%E6%9F%93%E6%A0%91.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
 &lt;p&gt;渲染的流程与一些环节的改动有关，例如删除了某个div造成排版的重新改变，这个时候以上流程的每一步都需要进行，有时候只是改变了背景颜色，其他布局不变，那么久直接跳过了layout，如果只是改变了某些样式，例如transform，就可以跳过layout和paint，直接合成。&lt;/p&gt;
-&lt;p&gt;{&amp;lt; figure src=&amp;quot;image/渲染树.png&amp;rdquo; title=&amp;quot;渲染树&amp;rdquo; &amp;gt;}&lt;/p&gt;
 &lt;p&gt;渲染的更新需要在全屏查看效果，在iframe里面看有问题。&lt;/p&gt;
 &lt;h2 id=&#34;css动画制作&#34;&gt;CSS动画制作&lt;/h2&gt;
 &lt;p&gt;CSS的transform命令可以对元素进行旋转，缩放，倾斜或平移操作。&lt;/p&gt;
@@ -78,10 +108,10 @@
 &lt;p&gt;语法：transition：属性名 时长 过度方式 延时时长&lt;/p&gt;
 &lt;p&gt;通常后面延时比较少用。也不是所有属性都能过度，需要透明度（opacity）、背景等等额改变最好作明确的编码表达。&lt;/p&gt;
 &lt;h2 id=&#34;animation制作动画&#34;&gt;animation制作动画&lt;/h2&gt;
-&lt;p&gt;语法1：@keyframe 元素id{n% {相应命令}}
-语法2：@keyframe form{相应命令} to{相应命令}&lt;/p&gt;
+&lt;p&gt;语法1：@keyframe 元素id{n% {相应命令}}&lt;/p&gt;
+&lt;p&gt;语法2：@keyframe form{相应命令} to{相应命令}&lt;/p&gt;
 &lt;p&gt;附带两个自制动画链接：&lt;/p&gt;
-&lt;p&gt;transition：http://js.jirengu.com/javil/1/watch?html,css,output&lt;/p&gt;
+&lt;p&gt;transition: &lt;a href=&#34;http://js.jirengu.com/javil/1/watch?html,css,output&#34;&gt;http://js.jirengu.com/javil/1/watch?html,css,output&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;animation: &lt;a href=&#34;http://js.jirengu.com/feyev/1/watch?html,css,output&#34;&gt;http://js.jirengu.com/feyev/1/watch?html,css,output&lt;/a&gt;&lt;/p&gt;
 </description>
       
