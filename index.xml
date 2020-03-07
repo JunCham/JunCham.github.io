@@ -54,8 +54,8 @@
 &lt;p&gt;用户爆发式增长。大量的既成网页和业余网页设计者的参与，使得调整语言规格困难重重。1996年8月，微软公司强势介入，宣布推出自己的脚本语言Jscript；11月，为了压制微软，网景公司决定申请Javascript的国际标准；1997年6月，第一个国际标准ECMA-262正式颁布。
 这些原因导致了JS存在了许多问题。&lt;/p&gt;
 &lt;p&gt;以上内容主要参考自:&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;JavaScript诞生记&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
-&lt;p&gt;&lt;!-- raw HTML omitted --&gt;JavaScript的十个设计缺陷&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2011/06/birth_of_javascript.html&#34; title=&#34;JavaScript诞生记&#34;&gt;JavaScript诞生记&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.ruanyifeng.com/blog/2011/06/10_design_defects_in_javascript.html&#34; title=&#34;JavaScript的十个设计缺陷&#34;&gt;JavaScript的十个设计缺陷&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;感觉易上手这一特点给JavaScript带来了机遇，虽然出生得很简陋，但是却因为行业的新兴，缺乏同类产品，易上手等优点使得JS早早占领了
 网页爱好者的喜爱，无中生有了受众。感觉就像乔布斯所说的，顾客并不知道自己想要什么，直到你把产品摆在了他面前。&lt;/p&gt;
 &lt;p&gt;PS：我们在编程和设计的时候也可以考虑我们日常的思考方式，如何记忆上一次的成绩，按什么作为标记这些日常的思维方式也可以迁移到编程当中去。&lt;/p&gt;
