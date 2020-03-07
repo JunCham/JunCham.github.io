@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 28 Feb 2020 10:49:32 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2020 23:56:47 +0800</lastBuildDate>
     
 	<atom:link href="https://juncham.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JavaScript的诞生</title>
+      <link>https://juncham.github.io/post/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</link>
+      <pubDate>Sat, 07 Mar 2020 23:56:47 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/</guid>
+      <description>JavaScript 的诞生 李爵士发明了HTML,赖先生发明了CSS，布兰登发明了JS，今天来说说JS的诞生。 布兰登是物理学转数学与计算机学，工作七年负责系统与</description>
+    </item>
     
     <item>
       <title>浅析URL</title>
