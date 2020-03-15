@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 07 Mar 2020 23:56:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 21:07:54 +0800</lastBuildDate>
     
 	<atom:link href="https://juncham.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS的基本语法</title>
+      <link>https://juncham.github.io/post/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Sun, 15 Mar 2020 21:07:54 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>JS的基本语法 js的表达式和语句的区别 js的表达式通常有值，语句可能有也可能没有。 add（1.2）表达式的值是函数的返回值， console.</description>
+    </item>
     
     <item>
       <title>JavaScript的诞生</title>

@@ -6,7 +6,7 @@
     <description>Recent content on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 07 Mar 2020 23:56:47 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 15 Mar 2020 21:07:54 +0800</lastBuildDate>
     
         <atom:link href="https://juncham.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,64 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JS的基本语法</title>
+      <link>https://juncham.github.io/post/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Sun, 15 Mar 2020 21:07:54 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      
+        <description>&lt;h1 id=&#34;js的基本语法&#34;&gt;JS的基本语法&lt;/h1&gt;
+&lt;h2 id=&#34;js的表达式和语句的区别&#34;&gt;js的表达式和语句的区别&lt;/h2&gt;
+&lt;p&gt;js的表达式通常有值，语句可能有也可能没有。&lt;/p&gt;
+&lt;p&gt;add（1.2）表达式的值是函数的返回值，&lt;/p&gt;
+&lt;p&gt;console.log（3）虽然会返回3，但是3只是这个语句的表达，它的值是undefined。&lt;/p&gt;
+&lt;p&gt;语句通常会改变环境，声明某个对象或者赋值。以上区别也不是绝对的。&lt;/p&gt;
+&lt;p&gt;JS要注意区分大小写。&lt;/p&gt;
+&lt;p&gt;js里面空格通常没有意义，除非影响断句。但是return后面不能跟空格，而且return后面不加东西，或者空格，或者命令在下一行就会自动添加undefined，这个要注意。&lt;/p&gt;
+&lt;h2 id=&#34;标识符的规则&#34;&gt;标识符的规则：&lt;/h2&gt;
+&lt;p&gt;标识符是给对象或者变量取名字的时候需要用到的符号，第一个标识符可以Unicode字母、_、中文等等。后面的标识符运用时可以涵盖数字。&lt;/p&gt;
+&lt;p&gt;代码写注释尽可能精简，无关或者易懂的不必中文注释以防遮蔽了重要信息。&lt;/p&gt;
+&lt;p&gt;{}把语句变成一块,当只有简单一句代码的时候可以省略。&lt;/p&gt;
+&lt;h2 id=&#34;if-else语句&#34;&gt;if else语句&lt;/h2&gt;
+&lt;p&gt;标准写法：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-coding&#34; data-lang=&#34;coding&#34;&gt;if (表达式n){
+语句a
+} else if (表达式){
+         语句
+}        else {
+         语句
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;虽然{}可以省略，但是省略的时候，if和else的判定只包含最近的一个语句，如果有两个语句，第二个就不受if管了（缩进）。&lt;/p&gt;
+&lt;p&gt;n&amp;gt;0 ? a :b&lt;/p&gt;
+&lt;p&gt;n&amp;gt;0 &amp;amp;&amp;amp; a&lt;/p&gt;
+&lt;p&gt;&amp;amp;&amp;amp;短路逻辑：A&amp;amp;&amp;amp;B,如果A是真，则需要继续判断后面，如果A是假，那后面也没必要管真假了。&lt;/p&gt;
+&lt;p&gt;a || b等价于：&lt;/p&gt;
+&lt;p&gt;if（！a）{b}&lt;/p&gt;
+&lt;p&gt;要么a，要么b。a=a|| 100，保底值写法。&lt;/p&gt;
+&lt;h2 id=&#34;switchcase语句&#34;&gt;switch，case语句&lt;/h2&gt;
+&lt;p&gt;跟if，else语句类似，case之间需要用break隔开，不然会一直贯穿判定。&lt;/p&gt;
+&lt;h2 id=&#34;while-for语句&#34;&gt;while for语句&lt;/h2&gt;
+&lt;h3 id=&#34;while语句&#34;&gt;while语句：&lt;/h3&gt;
+&lt;p&gt;while（表达式a）{语句b}&lt;/p&gt;
+&lt;p&gt;a为真，执行b，然后再判断a的真假。如果（直到）a为假，跳出循环（去执行其他语句）。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;https://juncham.github.io/images/while%E8%AF%AD%E5%8F%A5.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以上四者缺一不可，缺少初始化无法开始，另外三个缺失会造成死循环。&lt;/p&gt;
+&lt;h3 id=&#34;for语句&#34;&gt;for语句：&lt;/h3&gt;
+&lt;pre&gt;&lt;code class=&#34;language-coding&#34; data-lang=&#34;coding&#34;&gt;for（语句1；表达式2；语句3）{
+循环体
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;先执行语句1（初始化，有且只有一次），然后判断表达式2（判定），2为真，执行循环体，然后3（增长）；2为假，跳出循环，去执行其他语句。&lt;/p&gt;
+&lt;p&gt;break在循环体中，触发之后直接跳出for语句，但是只退出最近的一个for，而continue在循环体中，触发之后就直接跳过，执行下一个判定。&lt;/p&gt;
+&lt;h2 id=&#34;label&#34;&gt;label：&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&#34;language-coding&#34; data-lang=&#34;coding&#34;&gt;{
+foo：1
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;这是个代码块，标签里面是1。不是对象。&lt;/p&gt;
 </description>
       
     </item>
