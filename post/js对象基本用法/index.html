@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>总统套房</title>
+  <title>JS对象基本用法 - 总统套房</title>
   
 
 <meta name="renderer" content="webkit" />
@@ -23,7 +23,8 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <meta name="author" content="xianmin" />
-  <meta name="description" content="Hugo theme jane example site." />
+  <meta name="description" content="JS 对象基本用法 七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。 五个falsy值：nu" />
+
   <meta name="keywords" content="Hugo, theme, jane" />
 
 
@@ -34,8 +35,8 @@
 <meta name="generator" content="Hugo 0.62.2" />
 
 
-<link rel="canonical" href="https://juncham.github.io/" />
-<link href="/index.xml" rel="alternate" type="application/rss+xml" title="总统套房" />
+<link rel="canonical" href="https://juncham.github.io/post/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" />
+
 
 
 
@@ -58,15 +59,23 @@
 
 
 
-<meta property="og:title" content="总统套房" />
-<meta property="og:description" content="Hugo theme jane example site." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://juncham.github.io/" />
-<meta property="og:updated_time" content="2020-03-27T09:14:18+08:00" />
-<meta itemprop="name" content="总统套房">
-<meta itemprop="description" content="Hugo theme jane example site."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="总统套房"/>
-<meta name="twitter:description" content="Hugo theme jane example site."/>
+<meta property="og:title" content="JS对象基本用法" />
+<meta property="og:description" content="JS 对象基本用法 七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。 五个falsy值：nu" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://juncham.github.io/post/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" />
+<meta property="article:published_time" content="2020-03-27T09:14:18+08:00" />
+<meta property="article:modified_time" content="2020-03-27T09:14:18+08:00" />
+<meta itemprop="name" content="JS对象基本用法">
+<meta itemprop="description" content="JS 对象基本用法 七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。 五个falsy值：nu">
+<meta itemprop="datePublished" content="2020-03-27T09:14:18&#43;08:00" />
+<meta itemprop="dateModified" content="2020-03-27T09:14:18&#43;08:00" />
+<meta itemprop="wordCount" content="1037">
+
+
+
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS对象基本用法"/>
+<meta name="twitter:description" content="JS 对象基本用法 七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。 五个falsy值：nu"/>
 
 <!--[if lte IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -233,7 +242,7 @@
   <ul id="menu" class="menu">
     
     
-        <li class="menu-item active">
+        <li class="menu-item">
         
           
           
@@ -325,153 +334,170 @@
     <main id="main" class="main bg-llight">
       <div class="content-wrapper">
         <div id="content" class="content container">
-          
-<section id="posts" class="posts">
-  
-  
+          <article class="post bg-white">
     
-  
-  
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+    <header class="post-header">
+      <h1 class="post-title">JS对象基本用法</h1>
       
-      <a class="post-link" href="/post/%E6%B5%85%E6%9E%90url/">浅析URL</a>
-    </h1>
+      <div class="post-meta">
+        <time datetime="2020-03-27" class="post-time">
+          2020-03-27
+        </time>
+        
+        
+
+        
+        
+
+        
+        
+      </div>
+    </header>
+
     
-    <div class="post-meta">
-      <time datetime="2020-02-28" class="post-time">
-        2020-02-28
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
     
-    <div class="post-summary">
-      浅析URL URL URL：统一资源定位符（Uniform Resource Locator），标准格式如下： 以https://zh.wikipedia.org:80
-    </div>
-    <div class="read-more">
-      <a href="/post/%E6%B5%85%E6%9E%90url/" class="read-more-link">阅读全文</a>
-    </div>
-    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">文章目录</h2>
+  <div class="post-toc-content">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#声明对象的两种语法">声明对象的两种语法</a></li>
+    <li><a href="#如何删除对象的属性">如何删除对象的属性</a></li>
+    <li><a href="#如何查看对象的属性">如何查看对象的属性</a></li>
+    <li><a href="#如何修改或增加对象的属性">如何修改或增加对象的属性</a>
+      <ul>
+        <li><a href="#直接赋值">直接赋值：</a></li>
+        <li><a href="#批量赋值">批量赋值：</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
   </div>
-</article>
+</div>
 
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
-      
-      <a class="post-link" href="/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/">CSS知识总结</a>
-    </h1>
     
-    <div class="post-meta">
-      <time datetime="2020-02-26" class="post-time">
-        2020-02-26
-      </time>
-      
-      
-      
-      
+    <div class="post-content">
+      <h1 id="js-对象基本用法">JS 对象基本用法</h1>
+<p>七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。</p>
+<p>五个falsy值：null，undefined，0，NaN，&rsquo;&rsquo;</p>
+<p>对象是无序的数据集合，没有固定顺序，是键值对的集合，例如'name&rsquo;:&lsquo;666&rsquo;，name是键，666是它的值，他们成对是一个对象。</p>
+<h2 id="声明对象的两种语法">声明对象的两种语法</h2>
+<p>let obj = {&lsquo;name&rsquo;: &lsquo;666&rsquo;, &lsquo;work&rsquo;:&lsquo;BAT&rsquo;} (非正式写法)</p>
+<p>let obj = new Object({&lsquo;name&rsquo;: &lsquo;666&rsquo;, &lsquo;work&rsquo;:&lsquo;BAT&rsquo;})  (正式写法)</p>
+<p>键名是字符串，可以使任意符号，包括表情。</p>
+<p>每个key都是对象的属性名，每个value都是对象的属性值（上面所说的值）。</p>
+<p>let p1='name&rsquo;</p>
+<p>let obj ={p1:&lsquo;666&rsquo;}  这里的属性名是p1；</p>
+<p>let obj ={[p1]:&lsquo;666&rsquo;}  这里的属性名是变量p1；</p>
+<p>两个p1其实是不一样的东西。</p>
+<h2 id="如何删除对象的属性">如何删除对象的属性</h2>
+<p>语法：</p>
+<p>delete obj.name  或者  delete obj[&lsquo;name&rsquo;]</p>
+<p>要区分没有属性名和属性名的值undefined</p>
+<p>没有属性名：&lsquo;name&rsquo; in obj ===false</p>
+<p>属性名的值undefined(有属性但是还没赋予值): obj.name === undefined</p>
+<h2 id="如何查看对象的属性">如何查看对象的属性</h2>
+<p>语法：</p>
+<p>查看自身所有属性：Object.keys(obj)</p>
+<p>查看自身所有属性+公有属性： console.dir（obj）</p>
+<p>判断一个属性是否是自身所有属性：obj.hasOwnProperty(&lsquo;toString&rsquo;)</p>
+<p>原型是一个代表着（存着）对象的公有属性的对象。正常情况下一个对象的原型的原型是null。</p>
+<p>&lsquo;name&rsquo; in obj表示查看obj 里面的'name'的所有属性，而obj.hasOwnProperty(&lsquo;name&rsquo;) 是查看obj的name是不是自身所有的属性。</p>
+<p>查看属性的两种方法：</p>
+<p>obj[&lsquo;key&rsquo;]</p>
+<p>obj.key</p>
+<p>上面两者是等价的，推荐使用第一种，熟练之后再第二种，因为其实第二种的obj是字符串。
+而obj[key]求的是变量key的值的属性。
+也就是说：</p>
+<p>let &lsquo;key&rsquo;：&lsquo;666&rsquo;</p>
+<p>obj[key] ===obj[&lsquo;666&rsquo;]</p>
+<h2 id="如何修改或增加对象的属性">如何修改或增加对象的属性</h2>
+<p>语法：</p>
+<h3 id="直接赋值">直接赋值：</h3>
+<p>let obj = {name:&lsquo;666&rsquo;}</p>
+<p>obj.name= &lsquo;666&rsquo;</p>
+<p>obj[&lsquo;name&rsquo;]='666&rsquo;</p>
+<h3 id="批量赋值">批量赋值：</h3>
+<p>Object.assign(obj,{name:&lsquo;666&rsquo;,work:&lsquo;BAT&rsquo;})</p>
+<p>修改一个对象的共有属性例如：obj.toString='666&rsquo;，并不会影响其他对象的共有属性，而是单独给了obj一个toString一个‘666’，但是其实obj的共有属性还在。</p>
+<p>如果非要改，那就是obj.<strong>proto</strong>.toString = &lsquo;666&rsquo; 或者 Object.prototype.toString='666&rsquo;</p>
+<p>但是通常不会这样做，因为会影响其他对象。</p>
+<p>修改一个对象的原型语法：</p>
+<p>obj.<strong>proto</strong> =common</p>
+<p>let obj = Object.create(common)</p>
+<p>例如obj.<strong>proto</strong> = null 就直接抹掉了obj的原型（所有共有属性一口气凉凉）。</p>
+
     </div>
-  </header>
-  
-  <div class="post-content">
+
     
-    <div class="post-summary">
-      CSS知识总结 最近学习了CSS动画的制作。 今天的博客主要包括两个部分： 浏览器渲染原理 CSS 动画的两种做法（transition 和 animation) 浏览器渲染原理
-    </div>
-    <div class="read-more">
-      <a href="/post/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="read-more-link">阅读全文</a>
-    </div>
     
-  </div>
-</article>
-
-  
-    <article class="post bg-white">
-  <header class="post-header">
-    <h1 class="post-title">
+<div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">文章作者</span>
+    <span class="item-content">xianmin</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">上次更新</span>
+    <span class="item-content">
+      2020-03-27
       
-      <a class="post-link" href="/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE1/">HTML常用标签1</a>
-    </h1>
+    </span>
+  </p>
+  
+  <p class="copyright-item">
+    <span class="item-title">许可协议</span>
+    <span class="item-content"><a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a></span>
+  </p>
+</div>
+
+
     
-    <div class="post-meta">
-      <time datetime="2020-02-04" class="post-time">
-        2020-02-04
-      </time>
-      
-      
-      
-      
-    </div>
-  </header>
-  
-  <div class="post-content">
     
-    <div class="post-summary">
-      HTML常用标签 a标签 很常用，通常是跳转到内部页面或者外部页面，或者手机或邮箱。 href是hyer与reference的结合，超链接，可以在
-    </div>
-    <div class="read-more">
-      <a href="/post/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE1/" class="read-more-link">阅读全文</a>
-    </div>
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+          <a class="next" href="/post/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/">
+            <span class="next-text nav-default">JS的基本语法</span>
+            <span class="prev-text nav-mobile">下一篇</span>
+            
+            <i class="iconfont">
+              <svg class="icon" viewBox="0 0 1024 1024" version="1.1"
+  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+  width="18" height="18">
+  <path d="M332.091514 74.487481l-75.369571 89.491197c-10.963703 12.998035-10.285251 32.864502 1.499144 44.378743l286.278095 300.375162L266.565125 819.058374c-11.338233 12.190647-11.035334 32.285311 0.638543 44.850487l80.46666 86.564541c11.680017 12.583596 30.356378 12.893658 41.662889 0.716314l377.434212-421.426145c11.332093-12.183484 11.041474-32.266891-0.657986-44.844348l-80.46666-86.564541c-1.772366-1.910513-3.706415-3.533476-5.750981-4.877077L373.270379 71.774697C361.493148 60.273758 343.054193 61.470003 332.091514 74.487481z"></path>
+</svg>
+
+            </i>
+          </a>
+      </nav>
+    </footer>
+  </article>
+
+  
+  
+
+  
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
     
-  </div>
-</article>
 
   
-</section>
-
-
-
-
-
-
-  
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-
-  
-  
-  <nav class="pagination">
-    <ul>
-      
-      <li >
-        <a href="/">1</a>
-      </li>
-      
-      <li  class="active" >
-        <a href="/page/2/">2</a>
-      </li>
-      
-      <li >
-        <a href="/page/3/">3</a>
-      </li>
-      
-    </ul>
-  </nav>
-
-  
-  
-
-
-
-
 
         </div>
       </div>

@@ -9,21 +9,28 @@
   </url>
   
   <url>
-    <loc>https://juncham.github.io/post/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</loc>
-    <lastmod>2020-03-15T21:07:54+08:00</lastmod>
+    <loc>https://juncham.github.io/post/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</loc>
+    <lastmod>2020-03-27T09:14:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://juncham.github.io/post/</loc>
-    <lastmod>2020-03-15T21:07:54+08:00</lastmod>
+    <lastmod>2020-03-27T09:14:18+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://juncham.github.io/</loc>
+    <lastmod>2020-03-27T09:14:18+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://juncham.github.io/post/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2020-03-15T21:07:54+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>

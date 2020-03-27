@@ -6,7 +6,7 @@
     <description>Recent content on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sun, 15 Mar 2020 21:07:54 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2020 09:14:18 +0800</lastBuildDate>
     
         <atom:link href="https://juncham.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,66 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JS对象基本用法</title>
+      <link>https://juncham.github.io/post/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</link>
+      <pubDate>Fri, 27 Mar 2020 09:14:18 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
+      
+        <description>&lt;h1 id=&#34;js-对象基本用法&#34;&gt;JS 对象基本用法&lt;/h1&gt;
+&lt;p&gt;七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。&lt;/p&gt;
+&lt;p&gt;五个falsy值：null，undefined，0，NaN，&amp;rsquo;&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;对象是无序的数据集合，没有固定顺序，是键值对的集合，例如&#39;name&amp;rsquo;:&amp;lsquo;666&amp;rsquo;，name是键，666是它的值，他们成对是一个对象。&lt;/p&gt;
+&lt;h2 id=&#34;声明对象的两种语法&#34;&gt;声明对象的两种语法&lt;/h2&gt;
+&lt;p&gt;let obj = {&amp;lsquo;name&amp;rsquo;: &amp;lsquo;666&amp;rsquo;, &amp;lsquo;work&amp;rsquo;:&amp;lsquo;BAT&amp;rsquo;} (非正式写法)&lt;/p&gt;
+&lt;p&gt;let obj = new Object({&amp;lsquo;name&amp;rsquo;: &amp;lsquo;666&amp;rsquo;, &amp;lsquo;work&amp;rsquo;:&amp;lsquo;BAT&amp;rsquo;})  (正式写法)&lt;/p&gt;
+&lt;p&gt;键名是字符串，可以使任意符号，包括表情。&lt;/p&gt;
+&lt;p&gt;每个key都是对象的属性名，每个value都是对象的属性值（上面所说的值）。&lt;/p&gt;
+&lt;p&gt;let p1=&#39;name&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;let obj ={p1:&amp;lsquo;666&amp;rsquo;}  这里的属性名是p1；&lt;/p&gt;
+&lt;p&gt;let obj ={[p1]:&amp;lsquo;666&amp;rsquo;}  这里的属性名是变量p1；&lt;/p&gt;
+&lt;p&gt;两个p1其实是不一样的东西。&lt;/p&gt;
+&lt;h2 id=&#34;如何删除对象的属性&#34;&gt;如何删除对象的属性&lt;/h2&gt;
+&lt;p&gt;语法：&lt;/p&gt;
+&lt;p&gt;delete obj.name  或者  delete obj[&amp;lsquo;name&amp;rsquo;]&lt;/p&gt;
+&lt;p&gt;要区分没有属性名和属性名的值undefined&lt;/p&gt;
+&lt;p&gt;没有属性名：&amp;lsquo;name&amp;rsquo; in obj ===false&lt;/p&gt;
+&lt;p&gt;属性名的值undefined(有属性但是还没赋予值): obj.name === undefined&lt;/p&gt;
+&lt;h2 id=&#34;如何查看对象的属性&#34;&gt;如何查看对象的属性&lt;/h2&gt;
+&lt;p&gt;语法：&lt;/p&gt;
+&lt;p&gt;查看自身所有属性：Object.keys(obj)&lt;/p&gt;
+&lt;p&gt;查看自身所有属性+公有属性： console.dir（obj）&lt;/p&gt;
+&lt;p&gt;判断一个属性是否是自身所有属性：obj.hasOwnProperty(&amp;lsquo;toString&amp;rsquo;)&lt;/p&gt;
+&lt;p&gt;原型是一个代表着（存着）对象的公有属性的对象。正常情况下一个对象的原型的原型是null。&lt;/p&gt;
+&lt;p&gt;&amp;lsquo;name&amp;rsquo; in obj表示查看obj 里面的&#39;name&#39;的所有属性，而obj.hasOwnProperty(&amp;lsquo;name&amp;rsquo;) 是查看obj的name是不是自身所有的属性。&lt;/p&gt;
+&lt;p&gt;查看属性的两种方法：&lt;/p&gt;
+&lt;p&gt;obj[&amp;lsquo;key&amp;rsquo;]&lt;/p&gt;
+&lt;p&gt;obj.key&lt;/p&gt;
+&lt;p&gt;上面两者是等价的，推荐使用第一种，熟练之后再第二种，因为其实第二种的obj是字符串。
+而obj[key]求的是变量key的值的属性。
+也就是说：&lt;/p&gt;
+&lt;p&gt;let &amp;lsquo;key&amp;rsquo;：&amp;lsquo;666&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;obj[key] ===obj[&amp;lsquo;666&amp;rsquo;]&lt;/p&gt;
+&lt;h2 id=&#34;如何修改或增加对象的属性&#34;&gt;如何修改或增加对象的属性&lt;/h2&gt;
+&lt;p&gt;语法：&lt;/p&gt;
+&lt;h3 id=&#34;直接赋值&#34;&gt;直接赋值：&lt;/h3&gt;
+&lt;p&gt;let obj = {name:&amp;lsquo;666&amp;rsquo;}&lt;/p&gt;
+&lt;p&gt;obj.name= &amp;lsquo;666&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;obj[&amp;lsquo;name&amp;rsquo;]=&#39;666&amp;rsquo;&lt;/p&gt;
+&lt;h3 id=&#34;批量赋值&#34;&gt;批量赋值：&lt;/h3&gt;
+&lt;p&gt;Object.assign(obj,{name:&amp;lsquo;666&amp;rsquo;,work:&amp;lsquo;BAT&amp;rsquo;})&lt;/p&gt;
+&lt;p&gt;修改一个对象的共有属性例如：obj.toString=&#39;666&amp;rsquo;，并不会影响其他对象的共有属性，而是单独给了obj一个toString一个‘666’，但是其实obj的共有属性还在。&lt;/p&gt;
+&lt;p&gt;如果非要改，那就是obj.&lt;strong&gt;proto&lt;/strong&gt;.toString = &amp;lsquo;666&amp;rsquo; 或者 Object.prototype.toString=&#39;666&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;但是通常不会这样做，因为会影响其他对象。&lt;/p&gt;
+&lt;p&gt;修改一个对象的原型语法：&lt;/p&gt;
+&lt;p&gt;obj.&lt;strong&gt;proto&lt;/strong&gt; =common&lt;/p&gt;
+&lt;p&gt;let obj = Object.create(common)&lt;/p&gt;
+&lt;p&gt;例如obj.&lt;strong&gt;proto&lt;/strong&gt; = null 就直接抹掉了obj的原型（所有共有属性一口气凉凉）。&lt;/p&gt;
 </description>
       
     </item>
