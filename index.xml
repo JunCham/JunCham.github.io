@@ -6,7 +6,7 @@
     <description>Recent content on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 27 Mar 2020 09:14:18 +0800</lastBuildDate>
+    <lastBuildDate>Fri, 08 May 2020 00:24:14 +0800</lastBuildDate>
     
         <atom:link href="https://juncham.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,84 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JS函数的执行时机</title>
+      <link>https://juncham.github.io/post/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</link>
+      <pubDate>Fri, 08 May 2020 00:24:14 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</guid>
+      
+        <description>&lt;h2 id=&#34;关于js函数的调用时机&#34;&gt;关于JS函数的调用时机&lt;/h2&gt;
+&lt;p&gt;通常来说是按代码的执行顺序进行执行的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let i = 0
+for(i = 0; i&amp;lt;6; i++){
+  setTimeout(()=&amp;gt;{
+    console.log(i)
+  },0)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面的代码会打出6个6，而不是1，2，3，4，5。这是因为setTimeout表示这个代码运行完毕之后尽快执行。前提是这个for语句执行完再去做，
+也就是说，执行完了，这个唯一的i变成了6，退出了for循环之后执行，那就是6个6了。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;for (let i = 0; i&amp;lt;6; i++){
+  setTimeout(()=&amp;gt;{
+    console.log(i)
+  },0)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面的代码则会打印出 0、1、2、3、4、5 ，这是因为JS为了满足新手的幻想，在for循环里面每一次都新添加了一个i（i不唯一了），所以分别对应的打出了那个i。&lt;/p&gt;
+&lt;p&gt;这里的setTime意义不大了。&lt;/p&gt;
+&lt;p&gt;另外还有以下三种方式可以达到上面的效果。&lt;/p&gt;
+&lt;p&gt;1、闭包&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let i 
+for(i = 0; i&amp;lt;6; i++){
+  !function(j){
+      setTimeout(()=&amp;gt;{
+        console.log(j)
+      },0)
+  }(i)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2、利用 setTimeout 的第三个参数,将i传进去&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let i
+for(i = 0; i&amp;lt;6; i++){
+    setTimeout((value)=&amp;gt;{
+      console.log(value)
+    },0,i)
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;3、利用 const 关键字&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let i
+for(i = 0; i&amp;lt;6; i++){
+    const x = i
+    setTimeout(()=&amp;gt;{
+      console.log(x)
+    })
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;const声明 创建了一个值的只读引用，固定了每一个新出现的i，但是因为引用的内容i是可变的，于是可以不断变换x的值.&lt;/p&gt;
+&lt;h2 id=&#34;关于this&#34;&gt;关于this&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let person = {
+name: &amp;#39;frank&amp;#39;,
+sayHi(    ){
+console.log(`你好，我叫 ` + this.name)
+}
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;person.sayHi()&lt;/p&gt;
+&lt;p&gt;相当于&lt;/p&gt;
+&lt;p&gt;person.sayHi(person)&lt;/p&gt;
+&lt;p&gt;this代表了将要用到的未知称呼的变量，将其传给了代码里面的this，然后this又传给了要用到它的函数。&lt;/p&gt;
+&lt;p&gt;两种调用方法：&lt;/p&gt;
+&lt;p&gt;小白调用法：&lt;/p&gt;
+&lt;p&gt;person.sayHi()&lt;/p&gt;
+&lt;p&gt;person自动传到函数里面，作为this。&lt;/p&gt;
+&lt;p&gt;大师调用法：&lt;/p&gt;
+&lt;p&gt;person.sayHi。call(person),手动传入person。&lt;/p&gt;
+&lt;p&gt;this的两种使用方法：&lt;/p&gt;
+&lt;p&gt;隐式传递：&lt;/p&gt;
+&lt;p&gt;fn(1,2)  //相当于fn.call(unefined,1,2)，如果不添加undefined，就会被传给this，fn得到的就只有2。&lt;/p&gt;
+&lt;p&gt;obj.child.fn(1) //相当于obj.fn.call(obj.child,1)&lt;/p&gt;
+&lt;p&gt;显式传递：&lt;/p&gt;
+&lt;p&gt;fn.call(undefined,1,2)&lt;/p&gt;
+&lt;p&gt;fn.apply(undefined,[1,2])&lt;/p&gt;
 </description>
       
     </item>
