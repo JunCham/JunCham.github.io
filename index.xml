@@ -6,7 +6,7 @@
     <description>Recent content on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 May 2020 00:24:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2020 22:19:44 +0800</lastBuildDate>
     
         <atom:link href="https://juncham.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -27,6 +27,51 @@
 &lt;li&gt;&lt;a href=&#34;https://github.com/spf13/cast&#34;&gt;Cast&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;Learn more and contribute on &lt;a href=&#34;https://github.com/gohugoio&#34;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
+      <title>JQuery功能简要</title>
+      <link>https://juncham.github.io/post/jquery%E5%8A%9F%E8%83%BD%E7%AE%80%E8%A6%81/</link>
+      <pubDate>Sat, 13 Jun 2020 22:19:44 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/jquery%E5%8A%9F%E8%83%BD%E7%AE%80%E8%A6%81/</guid>
+      
+        <description>&lt;h1 id=&#34;jquery的功能简要&#34;&gt;jQuery的功能简要&lt;/h1&gt;
+&lt;p&gt;jQuery作为目前引用最广泛的库，也是寿命最长的库，有着很多优点，这里简要介绍一下它的一些功能。&lt;/p&gt;
+&lt;h2 id=&#34;1jquery-如何获取元素&#34;&gt;1、jQuery 如何获取元素&lt;/h2&gt;
+&lt;p&gt;通过元素的性质，例如id，class。例如:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;$(&amp;#34;p&amp;#34;)    //所有&amp;lt;p&amp;gt;元素
+$(document)  //整个文档对象
+$(&amp;#39;#myId&amp;#39;) //选择ID为myId的网页元素
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者以元素属性为基准，选择包含该属性或者是该属性值为“XX”的元素：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;$(&amp;#34;[href=&amp;#39;#&amp;#39;]&amp;#34;)
+$(&amp;#39;div.myClass&amp;#39;)  //选择class为myClass的div元素
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;2jquery-的链式操作是怎样的&#34;&gt;2、jQuery 的链式操作是怎样的&lt;/h2&gt;
+&lt;p&gt;在选择网页元素进行操作后，return回到原来的api继续进行操作是jQuery方便优雅的一点。
+通常需要在每个操作上加上return api或return this。如果需要考虑到返回当前api的前一个则需要加入相应的操作。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;$(&amp;#39;test&amp;#39;)        //对test操作
+  .find(div3) //找到div3这个元素
+  .add(blue) //对test加blue
+  .end()        //退回到div3的前一个api
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;3jquery-如何创建元素&#34;&gt;3、jQuery 如何创建元素&lt;/h2&gt;
+&lt;p&gt;jQuery创建新元素只要把新元素传入jQuery的构造函数即可。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;append()   //在被选元素的结尾插入内容
+prepend() //在被选元素的开头插入内容
+after()       //在被选元素之后插入内容
+before()    //在被选元素之前插入内容
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;4jquery-如何移动元素&#34;&gt;4、jQuery 如何移动元素&lt;/h2&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;.insertAfter()和.after()         //在现存元素的外部，从后面插入元素
+.insertBefore()和.before()   //在现存元素的外部，从前面插入元素
+.appendTo()和.append()    //在现存元素的内部，从后面插入元素
+.prependTo()和.prepend() //在现存元素的内部，从前面插入元素
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;$(&amp;lsquo;test&amp;rsquo;).inserttAfter(&amp;lsquo;p&amp;rsquo;)和$(&amp;lsquo;p&amp;rsquo;).after(&amp;lsquo;test&amp;rsquo;)&lt;/p&gt;
+&lt;p&gt;两者作用相同，都是将test移动到p后面，区别在于返回的都是前一个括号里面的元素。&lt;/p&gt;
+&lt;h2 id=&#34;5jquery-如何修改元素的属性&#34;&gt;5、jQuery 如何修改元素的属性&lt;/h2&gt;
+&lt;p&gt;$(selector).attr(attribute,value)  // 取出或设置某个属性的值，attribute：对应各属性，vlaue对应的属性值。&lt;/p&gt;
+&lt;p&gt;具体的可以参考阮一峰的&lt;a href=&#34;http://www.ruanyifeng.com/blog/2011/07/jquery_fundamentals.html&#34; title=&#34;jQuery设计思想&#34;&gt;jQuery设计思想&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;以及&lt;a href=&#34;https://www.jquery123.com/&#34; title=&#34;jQuery API 中文文档&#34;&gt;jQuery API 中文文档&lt;/a&gt;&lt;/p&gt;
 </description>
       
     </item>

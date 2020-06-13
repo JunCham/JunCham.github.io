@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Fri, 08 May 2020 00:24:14 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 13 Jun 2020 22:19:44 +0800</lastBuildDate>
     
 	<atom:link href="https://juncham.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JQuery功能简要</title>
+      <link>https://juncham.github.io/post/jquery%E5%8A%9F%E8%83%BD%E7%AE%80%E8%A6%81/</link>
+      <pubDate>Sat, 13 Jun 2020 22:19:44 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/jquery%E5%8A%9F%E8%83%BD%E7%AE%80%E8%A6%81/</guid>
+      <description>jQuery的功能简要 jQuery作为目前引用最广泛的库，也是寿命最长的库，有着很多优点，这里简要介绍一下它的一些功能。 1、jQuery 如何</description>
+    </item>
     
     <item>
       <title>JS函数的执行时机</title>
