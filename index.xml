@@ -6,7 +6,7 @@
     <description>Recent content on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Jul 2020 22:34:28 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 16 Sep 2020 00:16:49 +0800</lastBuildDate>
     
         <atom:link href="https://juncham.github.io/index.xml" rel="self" type="application/rss+xml" />
     
@@ -32,6 +32,159 @@
     </item>
     
     <item>
+      <title>浅析MVC</title>
+      <link>https://juncham.github.io/post/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Wed, 16 Sep 2020 00:16:49 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/%E6%B5%85%E6%9E%90mvc/</guid>
+      
+        <description>&lt;h1 id=&#34;浅析mvc&#34;&gt;浅析MVC&lt;/h1&gt;
+&lt;h2 id=&#34;mvc&#34;&gt;MVC&lt;/h2&gt;
+&lt;p&gt;M：model（模型）&lt;/p&gt;
+&lt;p&gt;主要是应用程序的动态数据结构，直接管理应用程序的数据，逻辑和规则。&lt;/p&gt;
+&lt;p&gt;V：view（视图）&lt;/p&gt;
+&lt;p&gt;主要是用户可以看见，可以操作，输入相关需求并获得回应的界面。&lt;/p&gt;
+&lt;p&gt;C：controller（控制器）&lt;/p&gt;
+&lt;p&gt;主要是接受用户信息和模型返回的信息，并且转化成相应模型和视图的命令。&lt;/p&gt;
+&lt;p&gt;以一台计算器为例，数字和运算符的按钮，结果输出的屏幕属于view模块，被输入的数字和相应的需求（加减乘除等）被储存和转化在controller模块之中，经过model模块里面的逻辑运算得到结果返还给controller，controller再返还给view让用户看到。&lt;/p&gt;
+&lt;p&gt;MVC的好处在于，使得代码更方便模块化，在代码需要维护和修改的情况下可以单独更新其中一个模块，减少工作量，工作更加清晰。&lt;/p&gt;
+&lt;p&gt;把数据相关的放到m，视图相关的放到v，其他的放到c&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;{
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; parseInt(&lt;span style=&#34;color:#a6e22e&#34;&gt;localStorage&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getItem&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;n&amp;#39;&lt;/span&gt;)&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;）&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//初始化数据
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  }
+}
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;,
+  &lt;span style=&#34;color:#75715e&#34;&gt;//初始化页面
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;html&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  &amp;lt;div id = &amp;#34;app1&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;lt;div class = &amp;#34;output&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;      &amp;lt;span id = &amp;#34;number&amp;#34;&amp;gt;{{n}}&amp;lt;span&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;lt;div id = &amp;#34;actions&amp;#34;&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;      &amp;lt;button id = &amp;#34;add1&amp;#34;&amp;gt;+1&amp;lt;button&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;    &amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;  &amp;lt;/div&amp;gt;
+&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;&lt;/span&gt;
+  &lt;span style=&#34;color:#75715e&#34;&gt;//  update(){
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//    c.ui.number.text(m.data.n || 100)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//  }
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;init&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt;){
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt;)
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;()
+  }
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;(){
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;null&lt;/span&gt;){
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;html&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;replace&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{{n}}&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)).&lt;span style=&#34;color:#a6e22e&#34;&gt;appendTo&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt;))
+    }&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt;{
+      &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;newEl&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;html&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;replace&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;{{n}}&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;))
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;replaceWith&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;newEl&lt;/span&gt;)   &lt;span style=&#34;color:#75715e&#34;&gt;//用新的替换旧的
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;el&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;newEl&lt;/span&gt;  &lt;span style=&#34;color:#75715e&#34;&gt;//更新El的值
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    })
+  }
+}
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; {
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;init&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt;){
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;init&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt;)
+    &lt;span style=&#34;color:#75715e&#34;&gt;//寻找重要元素
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ui&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;：&lt;/span&gt;{
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;button1&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;add1&amp;#39;&lt;/span&gt;)
+    }
+  }
+  &lt;span style=&#34;color:#75715e&#34;&gt;//绑定事件
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;bindEvent&lt;/span&gt;(){
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;on&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;click&amp;#39;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;#add1&amp;#39;&lt;/span&gt;,()=&amp;gt;{
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+=&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;()
+      &lt;span style=&#34;color:#75715e&#34;&gt;//  let n = parseInt(c.ui.number.text())   这个配套update使用
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;//  n +=1
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;//  localStorage.setItem(&amp;#39;n&amp;#39;,n)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;      &lt;span style=&#34;color:#75715e&#34;&gt;//  $number.text(n)
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;    })
+  }
+}
+
+&lt;span style=&#34;color:#66d9ef&#34;&gt;export&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;default&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; 
+
+  &lt;span style=&#34;color:#75715e&#34;&gt;//main.js中 importx from &amp;#34;./app1.js&amp;#34;  ;  x.init(container:&amp;#39;#app1&amp;#39;) 不确定是div还是section还是什么，所以用container代替，在外面传进这个container进行替换。x其实就是c的地址
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;代码参考：
+&lt;a href=&#34;https://www.runoob.com/design-pattern/mvc-pattern.html&#34; title=&#34;MVC模式&#34;&gt;MVC模式&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;eventbus&#34;&gt;EventBus&lt;/h2&gt;
+&lt;p&gt;EventBus是一个Android端优化的pubilish/subscirbe消息总线，简化了应用程序内各组件间，组件于后台线程间的通信。&lt;/p&gt;
+&lt;p&gt;常用的API：&lt;/p&gt;
+&lt;h3 id=&#34;trigger和on的搭配使用&#34;&gt;trigger和on的搭配使用：&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;eventBus&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;$&lt;/span&gt;({window})
+&lt;span style=&#34;color:#a6e22e&#34;&gt;update&lt;/span&gt;(){
+  Object.&lt;span style=&#34;color:#a6e22e&#34;&gt;assign&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;,&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;)
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;eventBus&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;trigger&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;m-updated&amp;#39;&lt;/span&gt;)
+}
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;c&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;{
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;init&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt;){
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;init&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;container&lt;/span&gt;)
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;eventBus&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;on&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;m-updated&amp;#39;&lt;/span&gt;,() =&amp;gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;v&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;render&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;date&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;)})    &lt;span style=&#34;color:#75715e&#34;&gt;//监听m-update，如果发生了就执行render
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;  }
+}
+&lt;span style=&#34;color:#a6e22e&#34;&gt;add&lt;/span&gt;(){
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;update&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;{&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;m&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;data&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;n&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;+&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;})
+},
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;注册&#34;&gt;注册：&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Javascript&#34; data-lang=&#34;Javascript&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;EventBus&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getDefault&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;register&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;解注册&#34;&gt;解注册：&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Javascript&#34; data-lang=&#34;Javascript&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;EventBus&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getDefault&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;unregister&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;发布&#34;&gt;发布：&lt;/h3&gt;
+&lt;p&gt;首先定义一个类似pojo类:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Javascript&#34; data-lang=&#34;Javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;class&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MassageEvent&lt;/span&gt;{
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; String &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;；&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; String &lt;span style=&#34;color:#a6e22e&#34;&gt;password&lt;/span&gt;;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MessageEvent&lt;/span&gt;(String &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;,String &lt;span style=&#34;color:#a6e22e&#34;&gt;password&lt;/span&gt;){
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;this&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;password&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;password&lt;/span&gt;;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;post的时候使用：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Javascript&#34; data-lang=&#34;Javascript&#34;&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;EventBus&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;getDefault&lt;/span&gt;().&lt;span style=&#34;color:#a6e22e&#34;&gt;post&lt;/span&gt;(&lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;MessageEvent&lt;/span&gt;(&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;hellow&amp;#34;&lt;/span&gt;,&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;world&amp;#34;&lt;/span&gt;))
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;接受方法为：&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-Javascript&#34; data-lang=&#34;Javascript&#34;&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;@&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;Sbuscribe&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;threadMode&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;ThreadMode&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;MainThread&lt;/span&gt;)
+&lt;span style=&#34;color:#66d9ef&#34;&gt;public&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;hellowEventaBus&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;MessageEvent&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;){
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;mText&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;setText&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;message&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;);
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;详见：&lt;a href=&#34;https://blog.csdn.net/harvic880925/article/details/40660137&#34; title=&#34;EventBus使用详解（一）&#34;&gt;EventBus使用详解（一）&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;表驱动函数&#34;&gt;表驱动函数：&lt;/h2&gt;
+&lt;p&gt;表驱动法是一种编程模式，从表里查找信息而不是使用逻辑（if和case），简单的一一对应使得代码更加清晰简便。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Date().&lt;span style=&#34;color:#a6e22e&#34;&gt;getDay&lt;/span&gt;()
+&lt;span style=&#34;color:#66d9ef&#34;&gt;let&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;zh&lt;/span&gt;;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;){
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;zh&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;周日&amp;#34;&lt;/span&gt;
+}&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt; (&lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;===&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;){
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;zh&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;周一&amp;#34;&lt;/span&gt;}&lt;span style=&#34;color:#66d9ef&#34;&gt;else&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;if&lt;/span&gt;{
+&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;……&lt;/span&gt;
+}
+  &lt;span style=&#34;color:#75715e&#34;&gt;//或者：
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;switch&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;（&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;）&lt;/span&gt;{
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;caes&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;；&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;zh&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;周日&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;；&lt;/span&gt;
+  &lt;span style=&#34;color:#66d9ef&#34;&gt;case&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;：&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;；&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;zh&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;周一&amp;#34;&lt;/span&gt;
+    &lt;span style=&#34;color:#66d9ef&#34;&gt;break&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;；&lt;/span&gt;
+  ...
+}
+
+  &lt;span style=&#34;color:#75715e&#34;&gt;// 但是使用表驱动编程可以很简便的写成：
+&lt;/span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;week&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;周日&amp;#39;&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;，&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;周一&amp;#39;&lt;/span&gt;...&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;周六&amp;#39;&lt;/span&gt;]&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;；&lt;/span&gt;
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;new&lt;/span&gt; Date().&lt;span style=&#34;color:#a6e22e&#34;&gt;getDay&lt;/span&gt;()
+&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;-&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;zh&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;week&lt;/span&gt;[&lt;span style=&#34;color:#a6e22e&#34;&gt;day&lt;/span&gt;]
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;详见：&lt;a href=&#34;https://juejin.im/post/6844903996872720392&#34; title=&#34;表驱动法&#34;&gt;表驱动法&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;模块化&#34;&gt;模块化&lt;/h2&gt;
+&lt;p&gt;个人对于模块化的理解是把完成某个任务或者某个操作的代码单独分隔进行存储，并通过导入导出进行使用，使得代码更加美观，同时方便后期维护和修改的时候简化修改量。当模块名唯一的时候能够避免命名冲突，减少命名空间的污染。同时可以按需引入相应的模块。&lt;/p&gt;
+&lt;p&gt;缺点是数据不安全，外部可以直接修改模块内部的数据。&lt;/p&gt;
+&lt;p&gt;详见：&lt;a href=&#34;https://juejin.im/post/6844903744518389768&#34; title=&#34;前端模块化详解(完整版)&#34;&gt;前端模块化详解(完整版)&lt;/a&gt;&lt;/p&gt;
+</description>
+      
+    </item>
+    
+    <item>
       <title>DOM事件机制与事件委托</title>
       <link>https://juncham.github.io/post/dom%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6%E4%B8%8E%E4%BA%8B%E4%BB%B6%E5%A7%94%E6%89%98/</link>
       <pubDate>Mon, 13 Jul 2020 22:34:28 +0800</pubDate>
@@ -42,14 +195,14 @@
 &lt;p&gt;DOM事件是JS与html交互的一种方式，它的实现主要通过事件流来实现。&lt;/p&gt;
 &lt;p&gt;事件流指的是页面接受事件的顺序，其中分为冒泡和捕获两种。&lt;/p&gt;
 &lt;p&gt;以下面的代码为例。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&amp;lt;body&amp;gt;
-&amp;lt;div class=&amp;#34;level1 x&amp;#34;&amp;gt;
-  &amp;lt;div class=&amp;#34;level2 x&amp;#34;&amp;gt;
-    &amp;lt;div class=&amp;#34;level3 x&amp;#34;&amp;gt;
-      &amp;lt;div class=&amp;#34;level4 x&amp;#34;&amp;gt;
-        &amp;lt;div class=&amp;#34;level5 x&amp;#34;&amp;gt;
-          &amp;lt;div class=&amp;#34;level6 x&amp;#34;&amp;gt;
-            &amp;lt;div class=&amp;#34;level7 x&amp;#34;&amp;gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;body&amp;gt;
+&amp;lt;div class=&amp;quot;level1 x&amp;quot;&amp;gt;
+  &amp;lt;div class=&amp;quot;level2 x&amp;quot;&amp;gt;
+    &amp;lt;div class=&amp;quot;level3 x&amp;quot;&amp;gt;
+      &amp;lt;div class=&amp;quot;level4 x&amp;quot;&amp;gt;
+        &amp;lt;div class=&amp;quot;level5 x&amp;quot;&amp;gt;
+          &amp;lt;div class=&amp;quot;level6 x&amp;quot;&amp;gt;
+            &amp;lt;div class=&amp;quot;level7 x&amp;quot;&amp;gt;
               
             &amp;lt;/div&amp;gt;
           &amp;lt;/div&amp;gt;
@@ -59,7 +212,7 @@
   &amp;lt;/div&amp;gt;
 &amp;lt;/div&amp;gt;
 &amp;lt;/body&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;捕获的监听是从最开始的祖先一代代的往下监听的，也就是从1到7的一级一级的监听有没有被触发。&lt;/p&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;捕获的监听是从最开始的祖先一代代的往下监听的，也就是从1到7的一级一级的监听有没有被触发。&lt;/p&gt;
 &lt;p&gt;冒泡则相反，从元素本身往上一代代的追溯，就好像气泡一点点往上冒。&lt;/p&gt;
 &lt;p&gt;W3C对事件模型的判定中&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;div.addEventListener(&amp;#39;click&amp;#39;,fn,bool)
@@ -90,7 +243,7 @@
 &lt;p&gt;jQuery作为目前引用最广泛的库，也是寿命最长的库，有着很多优点，这里简要介绍一下它的一些功能。&lt;/p&gt;
 &lt;h2 id=&#34;1jquery-如何获取元素&#34;&gt;1、jQuery 如何获取元素&lt;/h2&gt;
 &lt;p&gt;通过元素的性质，例如id，class。例如:&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;$(&amp;#34;p&amp;#34;)    //所有&amp;lt;p&amp;gt;元素
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;$(&amp;#34;p&amp;#34;)    //所有&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;p&lt;/span&gt;&amp;gt;元素
 $(document)  //整个文档对象
 $(&amp;#39;#myId&amp;#39;) //选择ID为myId的网页元素
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;或者以元素属性为基准，选择包含该属性或者是该属性值为“XX”的元素：&lt;/p&gt;
@@ -134,15 +287,15 @@ before()    //在被选元素之前插入内容
         <description>&lt;h2 id=&#34;关于js函数的调用时机&#34;&gt;关于JS函数的调用时机&lt;/h2&gt;
 &lt;p&gt;通常来说是按代码的执行顺序进行执行的。&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let i = 0
-for(i = 0; i&amp;lt;6; i++){
-  setTimeout(()=&amp;gt;{
+for(i = 0; i&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;++){&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(()=&lt;/span&gt;&amp;gt;{
     console.log(i)
   },0)
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;上面的代码会打出6个6，而不是1，2，3，4，5。这是因为setTimeout表示这个代码运行完毕之后尽快执行。前提是这个for语句执行完再去做，
 也就是说，执行完了，这个唯一的i变成了6，退出了for循环之后执行，那就是6个6了。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;for (let i = 0; i&amp;lt;6; i++){
-  setTimeout(()=&amp;gt;{
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;for (let i = 0; i&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;++){&lt;/span&gt;
+  &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(()=&lt;/span&gt;&amp;gt;{
     console.log(i)
   },0)
 }
@@ -151,25 +304,25 @@ for(i = 0; i&amp;lt;6; i++){
 &lt;p&gt;另外还有以下三种方式可以达到上面的效果。&lt;/p&gt;
 &lt;p&gt;1、闭包&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let i 
-for(i = 0; i&amp;lt;6; i++){
-  !function(j){
-      setTimeout(()=&amp;gt;{
+for(i = 0; i&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;++){&lt;/span&gt;
+  &lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;!&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;function&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;j&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;){&lt;/span&gt;
+      &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(()=&lt;/span&gt;&amp;gt;{
         console.log(j)
       },0)
   }(i)
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;2、利用 setTimeout 的第三个参数,将i传进去&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let i
-for(i = 0; i&amp;lt;6; i++){
-    setTimeout((value)=&amp;gt;{
+for(i = 0; i&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;++){&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;((&lt;/span&gt;&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;)=&lt;/span&gt;&amp;gt;{
       console.log(value)
     },0,i)
 }
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;3、利用 const 关键字&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;let i
-for(i = 0; i&amp;lt;6; i++){
-    const x = i
-    setTimeout(()=&amp;gt;{
+for(i = 0; i&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;6&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;i&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;++){&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;x &lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;i&lt;/span&gt;
+    &lt;span style=&#34;color:#a6e22e&#34;&gt;setTimeout&lt;/span&gt;&lt;span style=&#34;color:#960050;background-color:#1e0010&#34;&gt;(()=&lt;/span&gt;&amp;gt;{
       console.log(x)
     })
 }
@@ -211,14 +364,14 @@ console.log(`你好，我叫 ` + this.name)
       
         <description>&lt;h1 id=&#34;js-对象基本用法&#34;&gt;JS 对象基本用法&lt;/h1&gt;
 &lt;p&gt;七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。&lt;/p&gt;
-&lt;p&gt;五个falsy值：null，undefined，0，NaN，&amp;rsquo;&amp;rsquo;&lt;/p&gt;
-&lt;p&gt;对象是无序的数据集合，没有固定顺序，是键值对的集合，例如&#39;name&amp;rsquo;:&amp;lsquo;666&amp;rsquo;，name是键，666是它的值，他们成对是一个对象。&lt;/p&gt;
+&lt;p&gt;五个falsy值：null，undefined，0，NaN，&#39;&#39;&lt;/p&gt;
+&lt;p&gt;对象是无序的数据集合，没有固定顺序，是键值对的集合，例如&amp;rsquo;name&#39;:&amp;lsquo;666&amp;rsquo;，name是键，666是它的值，他们成对是一个对象。&lt;/p&gt;
 &lt;h2 id=&#34;声明对象的两种语法&#34;&gt;声明对象的两种语法&lt;/h2&gt;
 &lt;p&gt;let obj = {&amp;lsquo;name&amp;rsquo;: &amp;lsquo;666&amp;rsquo;, &amp;lsquo;work&amp;rsquo;:&amp;lsquo;BAT&amp;rsquo;} (非正式写法)&lt;/p&gt;
 &lt;p&gt;let obj = new Object({&amp;lsquo;name&amp;rsquo;: &amp;lsquo;666&amp;rsquo;, &amp;lsquo;work&amp;rsquo;:&amp;lsquo;BAT&amp;rsquo;})  (正式写法)&lt;/p&gt;
 &lt;p&gt;键名是字符串，可以使任意符号，包括表情。&lt;/p&gt;
 &lt;p&gt;每个key都是对象的属性名，每个value都是对象的属性值（上面所说的值）。&lt;/p&gt;
-&lt;p&gt;let p1=&#39;name&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;let p1=&amp;lsquo;name&amp;rsquo;&lt;/p&gt;
 &lt;p&gt;let obj ={p1:&amp;lsquo;666&amp;rsquo;}  这里的属性名是p1；&lt;/p&gt;
 &lt;p&gt;let obj ={[p1]:&amp;lsquo;666&amp;rsquo;}  这里的属性名是变量p1；&lt;/p&gt;
 &lt;p&gt;两个p1其实是不一样的东西。&lt;/p&gt;
@@ -234,7 +387,7 @@ console.log(`你好，我叫 ` + this.name)
 &lt;p&gt;查看自身所有属性+公有属性： console.dir（obj）&lt;/p&gt;
 &lt;p&gt;判断一个属性是否是自身所有属性：obj.hasOwnProperty(&amp;lsquo;toString&amp;rsquo;)&lt;/p&gt;
 &lt;p&gt;原型是一个代表着（存着）对象的公有属性的对象。正常情况下一个对象的原型的原型是null。&lt;/p&gt;
-&lt;p&gt;&amp;lsquo;name&amp;rsquo; in obj表示查看obj 里面的&#39;name&#39;的所有属性，而obj.hasOwnProperty(&amp;lsquo;name&amp;rsquo;) 是查看obj的name是不是自身所有的属性。&lt;/p&gt;
+&lt;p&gt;&amp;lsquo;name&amp;rsquo; in obj表示查看obj 里面的&amp;rsquo;name&amp;rsquo;的所有属性，而obj.hasOwnProperty(&amp;lsquo;name&amp;rsquo;) 是查看obj的name是不是自身所有的属性。&lt;/p&gt;
 &lt;p&gt;查看属性的两种方法：&lt;/p&gt;
 &lt;p&gt;obj[&amp;lsquo;key&amp;rsquo;]&lt;/p&gt;
 &lt;p&gt;obj.key&lt;/p&gt;
@@ -248,11 +401,11 @@ console.log(`你好，我叫 ` + this.name)
 &lt;h3 id=&#34;直接赋值&#34;&gt;直接赋值：&lt;/h3&gt;
 &lt;p&gt;let obj = {name:&amp;lsquo;666&amp;rsquo;}&lt;/p&gt;
 &lt;p&gt;obj.name= &amp;lsquo;666&amp;rsquo;&lt;/p&gt;
-&lt;p&gt;obj[&amp;lsquo;name&amp;rsquo;]=&#39;666&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;obj[&amp;lsquo;name&amp;rsquo;]=&amp;lsquo;666&amp;rsquo;&lt;/p&gt;
 &lt;h3 id=&#34;批量赋值&#34;&gt;批量赋值：&lt;/h3&gt;
 &lt;p&gt;Object.assign(obj,{name:&amp;lsquo;666&amp;rsquo;,work:&amp;lsquo;BAT&amp;rsquo;})&lt;/p&gt;
-&lt;p&gt;修改一个对象的共有属性例如：obj.toString=&#39;666&amp;rsquo;，并不会影响其他对象的共有属性，而是单独给了obj一个toString一个‘666’，但是其实obj的共有属性还在。&lt;/p&gt;
-&lt;p&gt;如果非要改，那就是obj.&lt;strong&gt;proto&lt;/strong&gt;.toString = &amp;lsquo;666&amp;rsquo; 或者 Object.prototype.toString=&#39;666&amp;rsquo;&lt;/p&gt;
+&lt;p&gt;修改一个对象的共有属性例如：obj.toString=&amp;lsquo;666&amp;rsquo;，并不会影响其他对象的共有属性，而是单独给了obj一个toString一个‘666’，但是其实obj的共有属性还在。&lt;/p&gt;
+&lt;p&gt;如果非要改，那就是obj.&lt;strong&gt;proto&lt;/strong&gt;.toString = &amp;lsquo;666&amp;rsquo; 或者 Object.prototype.toString=&amp;lsquo;666&amp;rsquo;&lt;/p&gt;
 &lt;p&gt;但是通常不会这样做，因为会影响其他对象。&lt;/p&gt;
 &lt;p&gt;修改一个对象的原型语法：&lt;/p&gt;
 &lt;p&gt;obj.&lt;strong&gt;proto&lt;/strong&gt; =common&lt;/p&gt;
@@ -336,7 +489,7 @@ foo：1
 &lt;p&gt;他的思路大致是：&lt;/p&gt;
 &lt;p&gt;（1）借鉴C语言的基本语法；&lt;/p&gt;
 &lt;p&gt;（2）借鉴Java语言的数据类型和内存管理；&lt;/p&gt;
-&lt;p&gt;（3）借鉴Scheme语言，将函数提升到&amp;quot;第一等公民&amp;rdquo;（first class）的地位；&lt;/p&gt;
+&lt;p&gt;（3）借鉴Scheme语言，将函数提升到&amp;quot;第一等公民&amp;quot;（first class）的地位；&lt;/p&gt;
 &lt;p&gt;（4）借鉴Self语言，使用基于原型（prototype）的继承机制。&lt;/p&gt;
 &lt;p&gt;因此Javascript语言实际上是两种语言风格的混合产物——（简化的）函数式编程+（简化的）面向对象编程。&lt;/p&gt;
 &lt;p&gt;JS存在了很多问题，一方面是布兰登的应付与设计额仓促，另一方面是JS的标准化过早。1995年10月解释器开发成功，12月发布，然后立即受到了使用者的广泛接受，&lt;/p&gt;
@@ -542,16 +695,16 @@ alt：替换的，或者可选择的。通常是图片加载失败就替换展�
 &lt;p&gt;HTML 源自于李博士的天才捣弄，他依据网址搞出了 URL，根据网页搞出了 HTML，为了让两者更加完善，cd搞出了 HTTP。&lt;/p&gt;
 &lt;h2 id=&#34;html-的起手&#34;&gt;HTML 的起手&lt;/h2&gt;
 &lt;p&gt;感叹号开局，emmet abbreviation 那个选项。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang=&amp;#34;zh-CN&amp;#34;&amp;gt;
-  &amp;lt;head&amp;gt;
-    &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt;
-    &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;
-    &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34; /&amp;gt;
-    &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;zh-CN&amp;#34;&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt; /&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt; /&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http-equiv&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;X-UA-Compatible&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ie=edge&amp;#34;&lt;/span&gt; /&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+  &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一行表示文件类型是 html。&lt;/p&gt;
 &lt;p&gt;lang 代表语言，这里 zh-CN 表示简体中文。&lt;/p&gt;
 &lt;p&gt;UTF-8 兼容人类所有的语言，后面几行主要是防止网页的缩放，感觉以后会在博客写到的。&lt;/p&gt;
@@ -593,16 +746,16 @@ alt：替换的，或者可选择的。通常是图片加载失败就替换展�
 &lt;p&gt;HTML 源自于李博士的天才捣弄，他依据网址搞出了 URL，根据网页搞出了 HTML，为了让两者更加完善，搞出了 HTTP。&lt;/p&gt;
 &lt;h2 id=&#34;html-的起手&#34;&gt;HTML 的起手&lt;/h2&gt;
 &lt;p&gt;感叹号开局，emmet abbreviation 那个选项。&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;
-&amp;lt;html lang=&amp;#34;zh-CN&amp;#34;&amp;gt;
-  &amp;lt;head&amp;gt;
-    &amp;lt;meta charset=&amp;#34;UTF-8&amp;#34; /&amp;gt;
-    &amp;lt;meta name=&amp;#34;viewport&amp;#34; content=&amp;#34;width=device-width, initial-scale=1.0&amp;#34; /&amp;gt;
-    &amp;lt;meta http-equiv=&amp;#34;X-UA-Compatible&amp;#34; content=&amp;#34;ie=edge&amp;#34; /&amp;gt;
-    &amp;lt;title&amp;gt;Document&amp;lt;/title&amp;gt;
-  &amp;lt;/head&amp;gt;
-  &amp;lt;body&amp;gt;&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4&#34;&gt;&lt;code class=&#34;language-markdown&#34; data-lang=&#34;markdown&#34;&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/span&gt;
+&amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;lang&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;zh-CN&amp;#34;&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;charset&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;UTF-8&amp;#34;&lt;/span&gt; /&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;name&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;viewport&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;width=device-width, initial-scale=1.0&amp;#34;&lt;/span&gt; /&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;meta&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;http-equiv&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;X-UA-Compatible&amp;#34;&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;content&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;ie=edge&amp;#34;&lt;/span&gt; /&amp;gt;
+    &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;Document&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;title&lt;/span&gt;&amp;gt;
+  &amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;head&lt;/span&gt;&amp;gt;
+  &amp;lt;&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;body&lt;/span&gt;&amp;gt;
+&amp;lt;/&lt;span style=&#34;color:#f92672&#34;&gt;html&lt;/span&gt;&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;第一行表示文件类型是 html。
 lang 代表语言，这里 zh-CN 表示简体中文。
 UTF-8 兼容人类所有的语言，后面几行主要是防止网页的缩放，感觉以后会在博客写到的。&lt;/p&gt;

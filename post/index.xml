@@ -6,10 +6,15 @@
     <description>Recent content in Posts on 总统套房</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Mon, 13 Jul 2020 22:34:28 +0800</lastBuildDate>
-    
-	<atom:link href="https://juncham.github.io/post/index.xml" rel="self" type="application/rss+xml" />
-    
+    <lastBuildDate>Wed, 16 Sep 2020 00:16:49 +0800</lastBuildDate><atom:link href="https://juncham.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>浅析MVC</title>
+      <link>https://juncham.github.io/post/%E6%B5%85%E6%9E%90mvc/</link>
+      <pubDate>Wed, 16 Sep 2020 00:16:49 +0800</pubDate>
+      
+      <guid>https://juncham.github.io/post/%E6%B5%85%E6%9E%90mvc/</guid>
+      <description>浅析MVC MVC M：model（模型） 主要是应用程序的动态数据结构，直接管理应用程序的数据，逻辑和规则。 V：view（视图） 主要是用户可以看见，</description>
+    </item>
     
     <item>
       <title>DOM事件机制与事件委托</title>

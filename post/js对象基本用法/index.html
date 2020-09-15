@@ -32,7 +32,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.62.2" />
+<meta name="generator" content="Hugo 0.75.1" />
 
 
 <link rel="canonical" href="https://juncham.github.io/post/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" />
@@ -67,13 +67,14 @@
 <meta property="article:modified_time" content="2020-03-27T09:14:18+08:00" />
 <meta itemprop="name" content="JS对象基本用法">
 <meta itemprop="description" content="JS 对象基本用法 七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。 五个falsy值：nu">
-<meta itemprop="datePublished" content="2020-03-27T09:14:18&#43;08:00" />
-<meta itemprop="dateModified" content="2020-03-27T09:14:18&#43;08:00" />
-<meta itemprop="wordCount" content="1037">
+<meta itemprop="datePublished" content="2020-03-27T09:14:18+08:00" />
+<meta itemprop="dateModified" content="2020-03-27T09:14:18+08:00" />
+<meta itemprop="wordCount" content="1043">
 
 
 
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS对象基本用法"/>
 <meta name="twitter:description" content="JS 对象基本用法 七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。 五个falsy值：nu"/>
 
@@ -379,14 +380,14 @@
     <div class="post-content">
       <h1 id="js-对象基本用法">JS 对象基本用法</h1>
 <p>七种数据类型：四基两空一对象（number string bool symbol；null undefined；object）。</p>
-<p>五个falsy值：null，undefined，0，NaN，&rsquo;&rsquo;</p>
-<p>对象是无序的数据集合，没有固定顺序，是键值对的集合，例如'name&rsquo;:&lsquo;666&rsquo;，name是键，666是它的值，他们成对是一个对象。</p>
+<p>五个falsy值：null，undefined，0，NaN，''</p>
+<p>对象是无序的数据集合，没有固定顺序，是键值对的集合，例如&rsquo;name':&lsquo;666&rsquo;，name是键，666是它的值，他们成对是一个对象。</p>
 <h2 id="声明对象的两种语法">声明对象的两种语法</h2>
 <p>let obj = {&lsquo;name&rsquo;: &lsquo;666&rsquo;, &lsquo;work&rsquo;:&lsquo;BAT&rsquo;} (非正式写法)</p>
 <p>let obj = new Object({&lsquo;name&rsquo;: &lsquo;666&rsquo;, &lsquo;work&rsquo;:&lsquo;BAT&rsquo;})  (正式写法)</p>
 <p>键名是字符串，可以使任意符号，包括表情。</p>
 <p>每个key都是对象的属性名，每个value都是对象的属性值（上面所说的值）。</p>
-<p>let p1='name&rsquo;</p>
+<p>let p1=&lsquo;name&rsquo;</p>
 <p>let obj ={p1:&lsquo;666&rsquo;}  这里的属性名是p1；</p>
 <p>let obj ={[p1]:&lsquo;666&rsquo;}  这里的属性名是变量p1；</p>
 <p>两个p1其实是不一样的东西。</p>
@@ -402,7 +403,7 @@
 <p>查看自身所有属性+公有属性： console.dir（obj）</p>
 <p>判断一个属性是否是自身所有属性：obj.hasOwnProperty(&lsquo;toString&rsquo;)</p>
 <p>原型是一个代表着（存着）对象的公有属性的对象。正常情况下一个对象的原型的原型是null。</p>
-<p>&lsquo;name&rsquo; in obj表示查看obj 里面的'name'的所有属性，而obj.hasOwnProperty(&lsquo;name&rsquo;) 是查看obj的name是不是自身所有的属性。</p>
+<p>&lsquo;name&rsquo; in obj表示查看obj 里面的&rsquo;name&rsquo;的所有属性，而obj.hasOwnProperty(&lsquo;name&rsquo;) 是查看obj的name是不是自身所有的属性。</p>
 <p>查看属性的两种方法：</p>
 <p>obj[&lsquo;key&rsquo;]</p>
 <p>obj.key</p>
@@ -416,11 +417,11 @@
 <h3 id="直接赋值">直接赋值：</h3>
 <p>let obj = {name:&lsquo;666&rsquo;}</p>
 <p>obj.name= &lsquo;666&rsquo;</p>
-<p>obj[&lsquo;name&rsquo;]='666&rsquo;</p>
+<p>obj[&lsquo;name&rsquo;]=&lsquo;666&rsquo;</p>
 <h3 id="批量赋值">批量赋值：</h3>
 <p>Object.assign(obj,{name:&lsquo;666&rsquo;,work:&lsquo;BAT&rsquo;})</p>
-<p>修改一个对象的共有属性例如：obj.toString='666&rsquo;，并不会影响其他对象的共有属性，而是单独给了obj一个toString一个‘666’，但是其实obj的共有属性还在。</p>
-<p>如果非要改，那就是obj.<strong>proto</strong>.toString = &lsquo;666&rsquo; 或者 Object.prototype.toString='666&rsquo;</p>
+<p>修改一个对象的共有属性例如：obj.toString=&lsquo;666&rsquo;，并不会影响其他对象的共有属性，而是单独给了obj一个toString一个‘666’，但是其实obj的共有属性还在。</p>
+<p>如果非要改，那就是obj.<strong>proto</strong>.toString = &lsquo;666&rsquo; 或者 Object.prototype.toString=&lsquo;666&rsquo;</p>
 <p>但是通常不会这样做，因为会影响其他对象。</p>
 <p>修改一个对象的原型语法：</p>
 <p>obj.<strong>proto</strong> =common</p>
